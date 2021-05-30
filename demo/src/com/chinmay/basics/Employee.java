@@ -3,7 +3,7 @@ package com.chinmay.basics;
 public class Employee{
 	
 	int empid;
-	String empName;
+	String Name;
 	static String compname="IBM";
 	static int x=5;
 	
