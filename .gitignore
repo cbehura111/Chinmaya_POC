@@ -1,0 +1,9 @@
+mylogs.log
+Ignore/
+*.CLASS
+.metadata/
+demo/.metadata/
+demo/.settings/
+demo/bin/
+demo/.classpath
+demo/.project
