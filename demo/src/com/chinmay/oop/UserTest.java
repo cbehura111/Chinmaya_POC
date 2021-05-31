@@ -17,13 +17,13 @@ public class UserTest {
 	
 	public static void main(String[] args) {
 		// Part 1
-		/*User user = new User();
+		User user = new User();
 		User staff = new Staff();
-		User editor = new Editor();*/
+		User editor = new Editor();
 		
-		//staff.postAReview("");
+		staff.postAReview("R");
 		
-		//((Staff)staff).printId();
+		((Staff)staff).printId();
 				
 		/*UserTest ut = new UserTest();
 		ut.printUserType(user);
@@ -41,7 +41,7 @@ public class UserTest {
 		//ut.approveReview(new Editor());		
 		
 		// Method binding demo
-		User staff = new Staff();
+		//User staff = new Staff();
 		//staff.staticMethod(); // part 1
 		//staff.postAReview("");
 		//staff.instanceMethod(10); // part 2
