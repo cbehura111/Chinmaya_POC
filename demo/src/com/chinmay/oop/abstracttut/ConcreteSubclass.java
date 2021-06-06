@@ -11,6 +11,6 @@ public class ConcreteSubclass extends AbstractSubclass {
 		ConcreteSubclass concrete= new ConcreteSubclass();
 		concrete.test1();
 		concrete.test2();
-		concrete.test3():
+		concrete.test3();
 	}
 }
