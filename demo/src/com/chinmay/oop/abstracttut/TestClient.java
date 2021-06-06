@@ -7,7 +7,9 @@ public static int Val=60;//() {
 
 public static void main(String[] args) {
 	A a = new ConcreteX();
-	a.foo();
-	a.bar();
+	C c = new ConcreteX();
+	c.foo();
+	c.bar();
+	c.foobar();
 }
 }
