@@ -4,8 +4,7 @@ public class Bookmark {
 	private long id;
 	private String title;
 	private String profileUrl;
-	private String Rakesh;
-
+	
 	public long getId() {
 		return id;
 	}
