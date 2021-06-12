@@ -25,13 +25,13 @@ public class BookmarkManager {
 	}
 	
 	
-	public Movie createMovie(long id,String title, String profileUrl,int releaseYear, String[] cast, String[] directors, String genre, double imdbRatings) {
+	public Movie createMovie(long id,String title,/* String profileUrl*/int releaseYear, String[] cast, String[] directors, String genre, double imdbRatings) {
 		
 		Movie movie=new Movie();
 		
 		movie.setId(id);
 		movie.setTitle(title);
-		movie.setProfileUrl(profileUrl);
+		//movie.setProfileUrl(profileUrl);
 		movie.setReleaseyear(releaseYear);
 		movie.setCast(cast);
 		movie.setDirectors(directors);
