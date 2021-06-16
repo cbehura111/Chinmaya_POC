@@ -1,11 +1,17 @@
 package com.bookmarkme.managers;
 
+import com.bookmarkme.dao.BookmarkDao;
 import com.bookmarkme.entities.Book;
+import com.bookmarkme.entities.Bookmark;
 import com.bookmarkme.entities.Movie;
+import com.bookmarkme.entities.User;
+import com.bookmarkme.entities.UserBookmark;
 import com.bookmarkme.entities.WebLink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager(); 
+	private static BookmarkDao dao= new BookmarkDao();
+	
 	private BookmarkManager() {}
 	
 	public static BookmarkManager getInstance(){
@@ -57,5 +63,16 @@ public class BookmarkManager {
 		book.setAmazonRating(amazonRating);
 		
 		return book;
+	}
+	public Bookmark[][] getBookmarks(){
+		return dao.getBookmarks();
+	}
+
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		UserBookmark userBookmark = new UserBookmark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+		
+		dao.saveBookmark(userBookmark);
 	}
 }

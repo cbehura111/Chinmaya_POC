@@ -1,9 +1,12 @@
 package com.bookmarkme.managers;
 
+import com.bookmarkme.dao.UserDao;
 import com.bookmarkme.entities.User;
 
 public class UserManager {
 	private static UserManager instance=new UserManager();
+	
+	private static UserDao dao=new UserDao();
 	private UserManager() {}
 		
 	public static UserManager getInstance(){
@@ -15,12 +18,15 @@ public class UserManager {
 		user.setId(id);
 		user.setEmail(email);
 		user.setPassword(password);
-		user.setPassword(lastName);
 		user.setFirstname(firstName);
 		user.setLastname(lastName);
 		user.setGender(gender);
 		user.setUserType(userType);
 		
 		return user;
+	}
+	
+	public User[] getUsers() {
+		return dao.getUsers();
 	}
 }
