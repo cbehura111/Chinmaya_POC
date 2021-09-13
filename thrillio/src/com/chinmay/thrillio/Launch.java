@@ -35,11 +35,18 @@ public class Launch {
 		for(User user : users) {
 			System.out.println(user);
 		}
+	}
+	
+		private static void startBookmarking() {
+			System.out.println("\n\n2. Bookmarking");
+			for(User user : users) {
+			View.bookmark(user, bookmarks);
+		}
 		
 	}
 	public static void main(String[] args) {
 		Loaddata();
-
+		startBookmarking();
 	}
 
 }

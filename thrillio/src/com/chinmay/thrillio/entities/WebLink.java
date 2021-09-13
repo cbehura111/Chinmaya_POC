@@ -1,6 +1,6 @@
 package com.chinmay.thrillio.entities;
 
-public class Weblink extends Bookmark {
+public class WebLink extends Bookmark {
 	private String url;
 	private String host;
 
@@ -23,6 +23,14 @@ public class Weblink extends Bookmark {
 	@Override
 	public String toString() {
 		return "Weblink [url=" + url + ", host=" + host + "]";
+	}
+
+	@Override
+	public boolean isKidFriendlyEligible() {
+		if(url.contains("porn") || getTitle().contains("porn") || host.contains("adult")) {
+			return false;
+		}
+		return true;
 	}
 
 }

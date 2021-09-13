@@ -2,6 +2,8 @@ package com.chinmay.thrillio.entities;
 
 import java.util.Arrays;
 
+import com.chinmay.thrillio.constants.MovieGenre;
+
 public class Movie extends Bookmark {
 	private int releaseYear;
 	private String[] cast;
@@ -53,6 +55,14 @@ public class Movie extends Bookmark {
 	public String toString() {
 		return "Movie [releaseYear=" + releaseYear + ", cast=" + Arrays.toString(cast) + ", directors="
 				+ Arrays.toString(directors) + ", genre=" + genre + ", imdbRatings=" + imdbRatings + "]";
+	}
+
+	@Override
+	public boolean isKidFriendlyEligible() {
+		if(genre.equals(MovieGenre.HORROR) || genre.equals(MovieGenre.THRILLERS)) {
+			return false;
+		}
+		return true;
 	}
 
 }

@@ -4,7 +4,9 @@ import com.chinmay.thrillio.dao.BookmarkDao;
 import com.chinmay.thrillio.entities.Book;
 import com.chinmay.thrillio.entities.Bookmark;
 import com.chinmay.thrillio.entities.Movie;
-import com.chinmay.thrillio.entities.Weblink;
+import com.chinmay.thrillio.entities.User;
+import com.chinmay.thrillio.entities.UserBookmark;
+import com.chinmay.thrillio.entities.WebLink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager();
@@ -16,9 +18,9 @@ public class BookmarkManager {
 		return instance;
 	}
 
-	public Weblink createWebLink(long id, String title, String profileUrl, String url, String host) {
+	public WebLink createWebLink(long id, String title, String profileUrl, String url, String host) {
 
-		Weblink weblink = new Weblink();
+		WebLink weblink = new WebLink();
 
 		weblink.setId(id);
 		weblink.setTitle(title);
@@ -66,5 +68,14 @@ public class BookmarkManager {
 	
 	public Bookmark[][] getBookmarks(){
 		return dao.getBookmarks();
+	}
+
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		UserBookmark userBookmark = new UserBookmark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+		
+		dao.saveUserBookmark(userBookmark);
+		
 	}
 }
