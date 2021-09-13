@@ -1,14 +1,16 @@
 package com.chinmay.thrillio.managers;
 
+import com.chinmay.thrillio.dao.BookmarkDao;
 import com.chinmay.thrillio.entities.Book;
+import com.chinmay.thrillio.entities.Bookmark;
 import com.chinmay.thrillio.entities.Movie;
 import com.chinmay.thrillio.entities.Weblink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager();
+	private static BookmarkDao dao = new BookmarkDao();
 
-	private BookmarkManager() {
-	}
+	private BookmarkManager() {}
 
 	public static BookmarkManager getInstance() {
 		return instance;
@@ -60,5 +62,9 @@ public class BookmarkManager {
 
 		return movie;
 
+	}
+	
+	public Bookmark[][] getBookmarks(){
+		return dao.getBookmarks();
 	}
 }
