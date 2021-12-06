@@ -15,12 +15,12 @@ public class ExceptionsDemo {
 		System.out.println("\n Inside Share Method...");
 
 		try {
-			HttpConnect.send(0
-
-					, "Hello", "www.google.com");
+			HttpConnect.send(1, "Hello", "www.google.com");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
+			System.out.println("\n Wait Connect to differnet Server...");
 		}
 
 		System.out.println("\n End of Share Method...");
