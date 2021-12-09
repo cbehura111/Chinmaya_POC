@@ -64,4 +64,9 @@ public abstract class Bookmark {
 	public void setSharedBy(User sharedBy) {
 		this.sharedBy = sharedBy;
 	}
+
+	public String getItemData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
