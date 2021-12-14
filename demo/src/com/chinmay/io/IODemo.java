@@ -1,4 +1,4 @@
-package com.chinmay.thrillio.io;
+package com.chinmay.io;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -13,8 +13,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class IODemo {
-	static String inFileStr = "walden.jpg";
-	static String outFileStr = "walden-out.jpg";
+	static String inFileStr = "piku.jpg";
+	static String outFileStr = "piku-out.jpg";
 	
 	public static void fileCopyNoBuffer() {
 		System.out.println("\nInside fileCopyNoBuffer ...");
@@ -111,9 +111,9 @@ public class IODemo {
 	}
 
 	public static void main(String[] args) {
-		//fileCopyNoBuffer();
-		//fileCopyWithBufferAndArray();
-		//readFromStandardInput();
-		System.out.println(System.getProperty("user.dir"));
+//		fileCopyNoBuffer();
+//		fileCopyWithBufferAndArray();
+		readFromStandardInput();
+//		System.out.println(System.getProperty("user.dir"));
 	}
 }
