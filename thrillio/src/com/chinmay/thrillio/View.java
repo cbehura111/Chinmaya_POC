@@ -51,7 +51,9 @@ public class View {
 		}
 
 	}
-
+	
+	//TODO: Will take input from user after IO Chapter
+	
 	private static boolean getShareDecesion() {
 		return Math.random() < 0.5 ? true : false;
 

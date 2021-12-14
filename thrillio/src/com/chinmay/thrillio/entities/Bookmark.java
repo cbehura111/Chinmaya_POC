@@ -9,7 +9,7 @@ public abstract class Bookmark {
 	private String kidFriendlyStatus = KidFriendlyStatus.UNKNOWN;
 	private User kidFriendlyMarkedBy;
 	private User sharedBy;
-	
+
 	public long getId() {
 		return id;
 	}

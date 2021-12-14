@@ -52,17 +52,17 @@ public class DataStore {
 	}
 
 	private static void loadWebLinks() {
-		bookmarks[0][0] = BookmarkManager.getInstance().createWebLink(2000, "Taming Tiger,Part 2","Profile URL NA",
+		bookmarks[0][0] = BookmarkManager.getInstance().createWebLink(2000, "Taming Tiger,Part 2",
 				"http://www.javaworld.com/article/2072759/core-java/taming-tiger--part-2.html",
 				"http://www.javaworld.com");
-		bookmarks[0][1] = BookmarkManager.getInstance().createWebLink(2001,"How do I import a pre-existing Java project into Eclipse and get up and running?","Profile URL NA",
+		bookmarks[0][1] = BookmarkManager.getInstance().createWebLink(2001,"How do I import a pre-existing Java project into Eclipse and get up and running?",
 				"http://stackoverflow.com/questions/142863/how-do-i-import-a-pre-existing-java-project-into-eclipse-and-get-up-and-running",
 				"http://www.stackoverflow.com");
-		bookmarks[0][2] = BookmarkManager.getInstance().createWebLink(2002,"Interface vs Abstract Class","Profile URL NA","http://mindprod.com/jgloss/interfacevsabstract.html",
+		bookmarks[0][2] = BookmarkManager.getInstance().createWebLink(2002,"Interface vs Abstract Class","http://mindprod.com/jgloss/interfacevsabstract.html",
 				"http://mindprod.com");
-		bookmarks[0][3] = BookmarkManager.getInstance().createWebLink(2003,"NIO tutorial by Greg Travis","Profile URL NA","http://cs.brown.edu/courses/cs161/papers/j-nio-ltr.pdf",
+		bookmarks[0][3] = BookmarkManager.getInstance().createWebLink(2003,"NIO tutorial by Greg Travis","http://cs.brown.edu/courses/cs161/papers/j-nio-ltr.pdf",
 				"http://cs.brown.edu");
-		bookmarks[0][4] =BookmarkManager.getInstance().createWebLink(2004,"Virtual Hosting and Tomcat","Profile URL NA","http://tomcat.apache.org/tomcat-6.0-doc/virtual-hosting-howto.html",
+		bookmarks[0][4] =BookmarkManager.getInstance().createWebLink(2004,"Virtual Hosting and Tomcat","http://tomcat.apache.org/tomcat-6.0-doc/virtual-hosting-howto.html",
 				"http://tomcat.apache.org");
 	}
 	
@@ -76,11 +76,11 @@ public class DataStore {
 	}
 	
 	private static void loadBooks() {
-		bookmarks[2][0] = BookmarkManager.getInstance().createBook(4000,"Walden","Profile URL NA",1854,"Wilder Publications",new String[] {"Henry David Thoreau"},BookGenre.PHILOSOPHY,4.3);
-		bookmarks[2][1] = BookmarkManager.getInstance().createBook(4001,"Self-Reliance and Other Essays","Profile URL NA",1993,"Dover Publications",new String[] {"Ralph Waldo Emerson"},BookGenre.PHILOSOPHY,4.5);
-		bookmarks[2][2] = BookmarkManager.getInstance().createBook(4002,"Light From Many Lamps","Profile URL NA",1988,"Touchstone",new String[] {"Lillian Eichler Watson"},BookGenre.PHILOSOPHY,5.0);
-		bookmarks[2][3] = BookmarkManager.getInstance().createBook(4003,"Head First Design Patterns","Profile URL NA",2004,"O'Reilly Media",new String[] {"Eric Freeman,Bert Bates,Kathy Sierra,Elisabeth Robson"},BookGenre.TECHNICAL,4.5);
-		bookmarks[2][4] = BookmarkManager.getInstance().createBook(4004,"Effective Java Programming Language Guide","Profile URL NA",2007,"Prentice Hall",new String[] {"Joshua Bloch"},BookGenre.TECHNICAL,4.9);
+		bookmarks[2][0] = BookmarkManager.getInstance().createBook(4000,"Walden",1854,"Wilder Publications",new String[] {"Henry David Thoreau"},BookGenre.PHILOSOPHY,4.3);
+		bookmarks[2][1] = BookmarkManager.getInstance().createBook(4001,"Self-Reliance and Other Essays",1993,"Dover Publications",new String[] {"Ralph Waldo Emerson"},BookGenre.PHILOSOPHY,4.5);
+		bookmarks[2][2] = BookmarkManager.getInstance().createBook(4002,"Light From Many Lamps",1988,"Touchstone",new String[] {"Lillian Eichler Watson"},BookGenre.PHILOSOPHY,5.0);
+		bookmarks[2][3] = BookmarkManager.getInstance().createBook(4003,"Head First Design Patterns",2004,"O'Reilly Media",new String[] {"Eric Freeman,Bert Bates,Kathy Sierra,Elisabeth Robson"},BookGenre.TECHNICAL,4.5);
+		bookmarks[2][4] = BookmarkManager.getInstance().createBook(4004,"Effective Java Programming Language Guide",2007,"Prentice Hall",new String[] {"Joshua Bloch"},BookGenre.TECHNICAL,4.9);
 	}
 
 

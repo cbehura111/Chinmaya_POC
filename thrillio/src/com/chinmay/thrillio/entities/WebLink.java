@@ -1,7 +1,5 @@
 package com.chinmay.thrillio.entities;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.chinmay.thrillio.partner.Shareable;
 
 public class WebLink extends Bookmark implements Shareable {
