@@ -1,10 +1,13 @@
-package com.springboot.tutorial;
+package com.chinmay.organiser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootTutorialApplicationTests {
+class OrganisationApplicationTests {
 
-	
+	@Test
+	void contextLoads() {
+	}
+
 }

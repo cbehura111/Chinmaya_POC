@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.5.10</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dailycodebuffer</groupId>
-	<artifactId>Spring-boot-tutorial</artifactId>
+	<groupId>com.chinmaya</groupId>
+	<artifactId>company-database</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Spring-boot-tutorial</name>
-	<description>By Daily Code Buffer</description>
+	<name>company-database</name>
+	<description>For coding Interview</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -24,6 +25,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.25.0-GA</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>

@@ -1,10 +1,13 @@
-package com.springboot.tutorial;
+package com.dailycodebuffer.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootTutorialApplicationTests {
+class SpringSecurityClientApplicationTests {
 
-	
+	@Test
+	void contextLoads() {
+	}
+
 }
