@@ -10,10 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = {"com.chinmaya.code.*"})
-@EntityScan(basePackages = {"chinmaya.code.*"})
 @OpenAPIDefinition(info = @Info(title = "Payment API Collection", version = "1.0", description = "APIs for processing payment"))
-@ComponentScan(basePackages = {"com.chinmaya"})
 //@EnableScheduling
 public class PaymentProcessingApplication {
 
