@@ -1,8 +1,7 @@
 package com.chinmaya.code.payment.exception;
 
-import com.iexceed.commonutil.dto.response.ErrorResponse;
-import com.iexceed.commonutil.enums.Status;
-import com.iexceed.commonutil.exception.*;
+import com.chinmaya.code.payment.dto.response.ErrorResponse;
+import com.chinmaya.code.payment.enums.Status;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -80,19 +79,6 @@ public class GenericExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
-    @ExceptionHandler({FieldValidationException.class})
-    protected ResponseEntity<Object> handleFieldValidationException(FieldValidationException exception, WebRequest request) {
-        log.error("FieldValidationException occurred: {}", exception.getMessage());
-        ErrorResponse response = ErrorResponse.builder()
-                .status(Status.F.getStaus())
-                .httpStatusCode(HttpStatus.BAD_REQUEST.value())
-                .errorCode(exception.getErrorCode())
-                .errorMessage(exception.getMessage())
-                .timeStamp(LocalDateTime.now(ZoneOffset.UTC))
-                .uri(request.getDescription(false))
-                .build();
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-    }
 
     @ExceptionHandler({JSONProcessingException.class})
     protected ResponseEntity<Object> handleJSONProcessingException(JSONProcessingException exception, WebRequest request) {

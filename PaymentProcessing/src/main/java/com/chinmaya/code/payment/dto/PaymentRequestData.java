@@ -1,7 +1,9 @@
 package com.chinmaya.code.payment.dto;
 
 import com.chinmaya.code.payment.enums.PaymentChannelEnum;
+import com.chinmaya.code.payment.enums.PaymentIntegratorEnum;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
@@ -20,6 +22,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentRequestData implements Serializable {
+    @Hidden
+    private String paymentId ;
 
     @NotBlank(message = "Transaction currency cannot be null/empty")
     @Schema(example = "INR")
@@ -34,6 +38,11 @@ public class PaymentRequestData implements Serializable {
     @Schema(example = "GPay")
     @Column(name = "payment_channel")
     private PaymentChannelEnum paymentChannel;
+
+    @NotBlank(message = "Payment Gateway cannot be null/empty")
+    @Schema(example = "RAZOR_PAY")
+    @Column(name = "payment_channel")
+    private PaymentIntegratorEnum paymentIntegrator;
 
     @NotBlank(message = "paymentDetails channel cannot be null/empty")
     @Schema(example = "1068061107")

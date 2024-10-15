@@ -1,20 +1,16 @@
 package com.chinmaya.code.payment.enums;
 
-import com.chinmaya.code.payment.service.impl.CreditCardPayment;
-import com.chinmaya.code.payment.service.impl.PayPalPayment;
+import com.chinmaya.code.payment.service.core.impl.CreditCardPayment;
+import com.chinmaya.code.payment.service.core.impl.PayPalPayment;
+import com.chinmaya.code.payment.service.core.impl.UpiPayment;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import java.util.Arrays;
-import java.util.Map;
 
 @AllArgsConstructor
 public enum PaymentChannelEnum {
     CREDIT_CARD(CreditCardPayment.class.getSimpleName()),
     DEBIT_CARD("DEBIT_CARD bean name"),
     PAYPAL(PayPalPayment.class.getSimpleName()),
-    GPay("GPay"),
+    UPI_PAYMENT(UpiPayment.class.getSimpleName()),
     BANK_TRANSFER("BANK_TRANSFER");
 
     private final String channelBean;

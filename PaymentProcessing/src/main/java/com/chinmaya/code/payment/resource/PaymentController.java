@@ -1,14 +1,13 @@
 package com.chinmaya.code.payment.resource;
 
-import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.dto.PaymentRequestData;
+import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.dto.response.PaymentResponse;
-import com.chinmaya.code.payment.service.IPaymentService;
+import com.chinmaya.code.payment.service.core.IPaymentService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import oracle.jdbc.proxy.annotation.Post;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +18,7 @@ public class PaymentController {
 private final IPaymentService iPaymentService;
     @ApiOperation(value = "Process Payments", notes = "API to process various payments through channels")
     @PostMapping(value = "/process"/*, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE*/)
-    public PaymentResponse processPayment(@Valid  @RequestBody PaymentRequestData paymentData){
+    public BaseResponse processPayment(@Valid  @RequestBody PaymentRequestData paymentData){
         return iPaymentService.processPayment(paymentData);
     }
 }

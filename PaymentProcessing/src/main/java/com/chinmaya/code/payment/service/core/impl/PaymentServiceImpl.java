@@ -1,20 +1,23 @@
-package com.chinmaya.code.payment.service.impl;
+package com.chinmaya.code.payment.service.core.impl;
 
+import com.chinmaya.code.payment.config.IdGenerator;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.dto.PaymentRequestData;
-import com.chinmaya.code.payment.dto.response.PaymentResponse;
-import com.chinmaya.code.payment.enums.PaymentChannelEnum;
-import com.chinmaya.code.payment.service.IPaymentService;
-import com.chinmaya.code.payment.service.IPaymentStrategy;
+import com.chinmaya.code.payment.service.core.IPaymentService;
+import com.chinmaya.code.payment.service.core.IPaymentStrategy;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class PaymentServiceImpl implements IPaymentService {
     @Autowired
     private Map<String, IPaymentStrategy> paymentStrategies;
+
+    private final IdGenerator idGenerator;
 
 
 
@@ -22,12 +25,12 @@ public class PaymentServiceImpl implements IPaymentService {
      * @param paymentData
      */
     @Override
-    public PaymentResponse processPayment(PaymentRequestData paymentData) {
+    public BaseResponse processPayment(PaymentRequestData paymentData) {
             IPaymentStrategy iPaymentStrategy = paymentStrategies.get(paymentData.getPaymentChannel().getChannelBean());  // card number
         if(iPaymentStrategy == null) {
             throw new IllegalArgumentException("Unsupported payment method: " + paymentData.getPaymentDetails());
         }
-        return iPaymentStrategy.pay(paymentData);
+        return iPaymentStrategy.pay(paymentData, String.valueOf(idGenerator.nextId()));
 
     }
 

@@ -14,6 +14,7 @@ public interface IResponseMapper {
     @Mapping(target = "transactionAmount", source = "amount")         // These already match correctly
     @Mapping(target = "paymentChannel", source = "paymentChannel", qualifiedByName = "mapPaymentChannel")    // These already match correctly
     @Mapping(target = "paymentDetails", source = "paymentDetails")    // These already match correctly
+    @Mapping(target = "transactionId", source = "paymentId")
     PaymentResponse toPaymentResponse(PaymentRequestData requestData);
     @Named("mapPaymentChannel")
     default String mapPaymentChannel(PaymentChannelEnum paymentChannelEnum) {
