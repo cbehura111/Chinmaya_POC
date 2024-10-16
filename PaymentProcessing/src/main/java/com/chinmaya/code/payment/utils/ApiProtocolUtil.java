@@ -75,35 +75,35 @@ public class ApiProtocolUtil {
         return "hi"+subscriptionKey;
     }
 
-    public BaseResponse getData(String uri) {
-        return webClient.get()
-                .uri(uri)
-                .retrieve()
-                .onStatus(status -> status.is4xxClientError(), clientResponse -> {
-                    // Handle 4xx errors
-                    return Mono.error(new RuntimeException("Client Error: " + clientResponse.statusCode()));
-                })
-                .onStatus(status -> status.is5xxServerError(), clientResponse -> {
-                    // Handle 5xx errors
-                    return Mono.error(new RuntimeException("Server Error: " + clientResponse.statusCode()));
-                })
-                .bodyToMono(BaseResponse.class)
-                .block();
-    }
-
-    public BaseResponse postData(String uri, Object request) {
-        return webClient.post()
-                .uri(uri)
-                .bodyValue(request)
-                .retrieve()
-                .onStatus(status -> status.is4xxClientError(), clientResponse -> {
-                    return Mono.error(new RuntimeException("Client Error: " + clientResponse.statusCode()));
-                })
-                .onStatus(status -> status.is5xxServerError(), clientResponse -> {
-                    return Mono.error(new RuntimeException("Server Error: " + clientResponse.statusCode()));
-                })
-                .bodyToMono(BaseResponse.class)
-                .block();
-    }
+//    public BaseResponse getData(String uri) {
+//        return webClient.get()
+//                .uri(uri)
+//                .retrieve()
+//                .onStatus(status -> status.is4xxClientError(), clientResponse -> {
+//                    // Handle 4xx errors
+//                    return Mono.error(new RuntimeException("Client Error: " + clientResponse.statusCode()));
+//                })
+//                .onStatus(status -> status.is5xxServerError(), clientResponse -> {
+//                    // Handle 5xx errors
+//                    return Mono.error(new RuntimeException("Server Error: " + clientResponse.statusCode()));
+//                })
+//                .bodyToMono(BaseResponse.class)
+//                .block();
+//    }
+//
+//    public BaseResponse postData(String uri, Object request) {
+//        return webClient.post()
+//                .uri(uri)
+//                .bodyValue(request)
+//                .retrieve()
+//                .onStatus(status -> status.is4xxClientError(), clientResponse -> {
+//                    return Mono.error(new RuntimeException("Client Error: " + clientResponse.statusCode()));
+//                })
+//                .onStatus(status -> status.is5xxServerError(), clientResponse -> {
+//                    return Mono.error(new RuntimeException("Server Error: " + clientResponse.statusCode()));
+//                })
+//                .bodyToMono(BaseResponse.class)
+//                .block();
+//    }
 
 }

@@ -3,10 +3,10 @@ package com.chinmaya.code.payment.utils;
 import com.chinmaya.code.payment.dto.response.ApiResponse;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.enums.SuccessCodes;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -28,10 +30,11 @@ public class Utility {
     private WebClient webClient;
     @Autowired
     ObjectMapper objectMapper;
+    private final SecureRandom random = new SecureRandom() ;
 
-    public ApiResponse callExternalApi(HttpMethod method, String uri, Map<String, Object> requestObject) {
+    public ApiResponse callExternalApi(HttpMethod method, String endPoint, Map<String, Object> requestObject) {
         WebClient.RequestBodySpec requestSpec = webClient.method(method)
-                .uri(uri);
+                .uri(endPoint);
 
         if (method == HttpMethod.POST || method == HttpMethod.PUT) {
             requestSpec.bodyValue(requestObject);
@@ -39,7 +42,15 @@ public class Utility {
 
         return requestSpec
                 .retrieve()
-                .toEntity(String.class) // Use toEntity to get the status code along with the body
+                .onStatus(status -> status.is4xxClientError(), clientResponse -> {
+                    // Handle 4xx errors
+                    return Mono.error(new RuntimeException("Client Error: " + clientResponse.statusCode()));
+                })
+                .onStatus(status -> status.is5xxServerError(), clientResponse -> {
+                    // Handle 5xx errors
+                    return Mono.error(new RuntimeException("Server Error: " + clientResponse.statusCode()));
+                })
+                .toEntity(String.class)
                 .map(responseEntity -> new ApiResponse(responseEntity.getStatusCodeValue(), responseEntity.getBody()))
                 .onErrorResume(e -> {
                     throw new RuntimeException("Error during request: " + e.getMessage(), e);
@@ -64,9 +75,10 @@ public class Utility {
 
     public String extractTransactionId(String responseBody) {
         try {
-            JSONObject jsonObj = new JSONObject(responseBody);
+            JSONArray jsonArray = new JSONArray(responseBody);
+            JSONObject jsonObj = jsonArray.getJSONObject(random.nextInt(jsonArray.length()));
             log.debug("JSON object : {}", jsonObj);
-            return ((JSONObject) jsonObj.optJSONArray("loanAccounts").get(0)).optString("accountName");
+            return (jsonObj.optString("id"));
         } catch (Exception e) {
             throw new RuntimeException("Error parsing Razorpay order response", e);
         }

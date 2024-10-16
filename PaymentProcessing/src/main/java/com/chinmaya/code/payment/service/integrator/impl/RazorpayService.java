@@ -19,7 +19,7 @@ public class RazorpayService implements IGatewayIntegrator {
     @Autowired
     private Utility utility;
     @Override
-    public ApiResponse createPaymentOrder(BigDecimal amount, String receiptId, HttpMethod method, String uri) {
+    public ApiResponse createPaymentOrder(BigDecimal amount, String receiptId, HttpMethod method, String endPoint) {
         JSONObject response = new JSONObject();
         // Make POST request to Razorpay API
         Map<String, Object> orderRequest = new HashMap<>();
@@ -27,6 +27,6 @@ public class RazorpayService implements IGatewayIntegrator {
         orderRequest.put("currency", "INR");
         orderRequest.put("receipt", receiptId);
         orderRequest.put("payment_capture", 1); // 1 for automatic capture after payment
-        return utility.callExternalApi(method, uri, orderRequest);
+        return utility.callExternalApi(method, endPoint, orderRequest);
     }
 }

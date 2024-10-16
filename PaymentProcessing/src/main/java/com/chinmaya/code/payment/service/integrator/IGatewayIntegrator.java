@@ -6,5 +6,5 @@ import org.springframework.http.HttpMethod;
 import java.math.BigDecimal;
 
 public interface IGatewayIntegrator {
-    public ApiResponse createPaymentOrder(BigDecimal amount, String receiptId, HttpMethod method, String uri);
+    public ApiResponse createPaymentOrder(BigDecimal amount, String receiptId, HttpMethod method, String endPoint);
 }
