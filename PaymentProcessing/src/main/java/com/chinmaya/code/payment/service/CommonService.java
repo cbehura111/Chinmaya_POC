@@ -35,7 +35,7 @@ public class CommonService {
         if (gatewayIntegrator == null) {
             throw new IllegalArgumentException("Unsupported payment gateway: " + paymentData.getPaymentIntegrator());
         }
-        ApiResponse apiResponse = gatewayIntegrator.createPaymentOrder(paymentData.getAmount(), receiptId, HttpMethod.GET, "/transaction");
+        ApiResponse apiResponse = gatewayIntegrator.createPaymentOrder(paymentData.getAmount(), receiptId, HttpMethod.GET, "/getBankParams");
         paymentData.setPaymentId(utility.extractTransactionId(apiResponse.getResponseBody()));
         var paymentResponse = responseMapper.toPaymentResponse(paymentData);
         return utility.formSuccessResponse(apiResponse.getStatusCode(), SuccessCodes.SUCCESS_SAVE, utility.getJsonNode(paymentResponse));

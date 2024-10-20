@@ -19,6 +19,9 @@ public class WebClientConfig {
     @Value("${service.base.url}")
     private String baseUrl;
 
+    @Value("${common.service.base.url}")
+    private String commonServiceBaseUrl;
+
     @Bean
     public WebClient webClient(WebClient.Builder builder) throws SSLException {
         // Create a custom SSL context
@@ -28,7 +31,7 @@ public class WebClientConfig {
                 );
 
         return builder
-                .baseUrl(baseUrl)
+                .baseUrl(commonServiceBaseUrl)
                 .clientConnector(new ReactorClientHttpConnector())
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HttpHeaders.AUTHORIZATION, getBasicAuthHeader())
