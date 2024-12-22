@@ -75,8 +75,9 @@ public class Utility {
 
     public String extractTransactionId(String responseBody) {
         try {
-            JSONArray jsonArray = new JSONArray(responseBody);
-            JSONObject jsonObj = jsonArray.getJSONObject(random.nextInt(jsonArray.length()));
+            //JSONArray jsonArray = new JSONArray(responseBody);
+            JSONObject objTest = new JSONObject(responseBody);
+            JSONObject jsonObj = new JSONObject().put("id",objTest.optJSONObject("data").optString("swiftCode"));//jsonArray.getJSONObject(random.nextInt(jsonArray.length()));
             log.debug("JSON object : {}", jsonObj);
             return (jsonObj.optString("id"));
         } catch (Exception e) {

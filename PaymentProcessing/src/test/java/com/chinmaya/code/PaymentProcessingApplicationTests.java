@@ -1,7 +1,6 @@
-package com.chinmaya.code.payment;
+package com.chinmaya.code;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
 class PaymentProcessingApplicationTests {
