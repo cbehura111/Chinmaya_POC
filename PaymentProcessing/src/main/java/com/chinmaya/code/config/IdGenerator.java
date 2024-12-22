@@ -1,4 +1,4 @@
-package com.chinmaya.code.payment.config;
+package com.chinmaya.code.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

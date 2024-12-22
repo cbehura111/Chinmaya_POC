@@ -1,14 +1,10 @@
 package com.chinmaya.code.payment.utils;
 
-import com.chinmaya.code.payment.config.WebClientConfig;
-import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.exception.PaymentProcessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;

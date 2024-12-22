@@ -1,4 +1,4 @@
-package com.chinmaya.code.payment.config;
+package com.chinmaya.code.config;
 
 import io.netty.handler.ssl.SslContextBuilder;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
 package com.chinmaya.code.payment.service.core.impl;
 
-import com.chinmaya.code.payment.config.IdGenerator;
+import com.chinmaya.code.config.IdGenerator;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.dto.PaymentRequestData;
 import com.chinmaya.code.payment.service.core.IPaymentService;
