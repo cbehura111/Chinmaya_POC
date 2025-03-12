@@ -5,11 +5,11 @@ import com.chinmaya.code.payment.exception.PaymentProcessException;
 import com.chinmaya.code.payment.utils.ApiProtocolUtil;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +52,13 @@ public class APIController {
 
         log.info(EXITMETHOD, method);
         return ResponseEntity.status(response.getHttpStatusCode()).body(response);
+    }
+
+    @ApiOperation(value = "Fun", notes = "Eat 5 Star")
+    @GetMapping(value = "/murali"/*, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE*/)
+    public ResponseEntity<String> callMurali() {
+        String murali = "I'm Murali & I'm in";
+        return new ResponseEntity<>(murali+"love with Rupesh. We're planning to go London in titanic", HttpStatus.OK);
     }
 
     private BaseResponse handleApiCall(String methodType) {
