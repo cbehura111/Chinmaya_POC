@@ -1,0 +1,51 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "primaryCcy": "${REQUEST~apiRequest.requestObj.primaryCcy}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_ACC_DLBL3~ಖಾತೆ ಸಂಖ್ಯ": "${RESPONSE~accounts[].accountNo}",
+        "branchCode": "${RESPONSE~accounts[].branchCode}",
+        "availBalance~LIT_ACC_DLBL8~ಬಾಕಿ ಮೊತ್ತ": "${RESPONSE~accounts[].availBalance}",
+        "currentBalance": "${RESPONSE~accounts[].currentBalance}",
+        "withdrawBalance": "${RESPONSE~accounts[].withdrawBalance}",
+        "overdraftLimit": "${RESPONSE~accounts[].overdraftLimit}",
+        "branchName": "${RESPONSE~accounts[].branchName}",
+        "bankName": "${RESPONSE~accounts[].bankName}",
+        "accountType~LIT_ACC_DLBL2~ಖಾತೆಯ ಪ್ರಕಾರ": "${RESPONSE~accounts[].accountType}",
+        "productName": "${RESPONSE~accounts[].productName}",
+        "currency~LIT_ACC_DLBL6~ಕರೆನ್ಸ": "${RESPONSE~accounts[].currency}",
+        "ifsc~LIT_ACC_DLBL5~ಐಎಫ್ಎಸ್ಸಿ ಕೋಡ್": "${RESPONSE~accounts[].ifsc}",
+        "relationShip": "${RESPONSE~accounts[].relationShip}",
+        "openedDate": "${RESPONSE~accounts[].openedDate}",
+        "lienAmount": "${RESPONSE~accounts[].lienAmount}",
+        "bankAddress~LIT_ACC_DLBL4~ಶಾಖೆ": "${RESPONSE~accounts[].bankAddress}",
+        "acctName~LIT_ACC_DLBL1~ಖಾತೆದಾರರ ಹೆಸರು": "${RESPONSE~accounts[].acctName}",
+        "jointHolderName~LIT_ACC_DLBL7~ಜಂಟಿ ಖಾತೆದಾರ": "${RESPONSE~accounts[].jointHolderName}",
+        "emailFrequency": "${RESPONSE~accounts[].emailFrequency}",
+        "availBalanceFcy": "${RESPONSE~accounts[].availBalanceFcy}",
+        "nickName": "${RESPONSE~accounts[].nickName}",
+        "creditAllowed": "${RESPONSE~accounts[].creditAllowed}",
+        "debitAllowed": "${RESPONSE~accounts[].debitAllowed}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

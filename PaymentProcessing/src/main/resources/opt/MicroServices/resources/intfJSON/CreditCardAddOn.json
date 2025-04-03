@@ -1,0 +1,27 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "cardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+    "address": "${REQUEST~apiRequest.requestObj.custAddress}",
+    "customerName": "${REQUEST~apiRequest.requestObj.custName}",
+    "dob": "${REQUEST~apiRequest.requestObj.dob}",
+    "relationship": "${REQUEST~apiRequest.requestObj.relationship}",
+    "primaryCardNumber": "${REQUEST~apiRequest.requestObj.primaryCardNumber}"
+
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

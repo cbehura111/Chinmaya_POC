@@ -1,0 +1,22 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "POST",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "requestDef": "",
+    "responseDef": {
+        "serviceStatusCode": "${RESPONSE~status}",
+        "hostErrorMsg": "${RESPONSE~errorMsg}",
+        "hostErrorCode": "${RESPONSE~errorCode}",
+        "token": "${RESPONSE~FisdomToken_Res.data.fisdomToken}",
+        "currentTS": "${RESPONSE~FisdomToken_Res.data.currentTS}"
+    },
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    }
+}

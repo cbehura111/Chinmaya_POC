@@ -1,0 +1,35 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+ "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_CLS_LN_DLBL1~ಖಾತೆ ಸಂಖ್ಯೆ": "${RESPONSE~accounts[].accountNo}",
+        "loanType~LIT_CLS_LN_DLBL2~ಸಾಲದ ಪ್ರಕಾರ": "${RESPONSE~accounts[].loanType}",
+        "currency~LIT_CLS_LN_DLBL3~ಕರೆನ್ಸಿ": "${RESPONSE~accounts[].currency}",
+        "loanAmount~LIT_CLS_LN_DLBL4~ಸಾಲದ ಮೊತ್ತ": "${RESPONSE~accounts[].loanAmount}",
+        "preclosureCharges~LIT_CLS_LN_DLBL5~ಪೂರ್ವ ಮುಚ್ಚುವ ಶುಲ್ಕಗಳು": "${RESPONSE~accounts[].preclosureCharges}",
+        "interestAmount~LIT_CLS_LN_DLBL6~ಬಡ್ಡಿ ಮೊತ್ತ": "${RESPONSE~accounts[].interestAmount}",
+        "closureType~LIT_CLS_LN_DLBL7~ಮುಚ್ಚುವಿಕೆಯ ಪ್ರಕಾರ": "${RESPONSE~accounts[].closureType}",
+        "closureDate~LIT_CLS_LN_DLBL8~ಮುಚ್ಚುವ ದಿನಾಂಕ": "${RESPONSE~accounts[].closureDate}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

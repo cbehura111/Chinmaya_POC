@@ -1,0 +1,31 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "apiRequest": {
+      "appId": "${REQUEST~apiRequest.appId}",
+      "userId": "${REQUEST~apiRequest.userId}",
+      "requestObj": {
+        "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+        "startDate": "${REQUEST~apiRequest.requestObj.startDate}",
+        "endDate": "${REQUEST~apiRequest.requestObj.endDate}",
+        "offset": "${REQUEST~apiRequest.requestObj.offset}",
+        "limit": "${REQUEST~apiRequest.requestObj.limit}",
+        "txnCount": "${REQUEST~apiRequest.requestObj.txnCount}"
+      }
+    }
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

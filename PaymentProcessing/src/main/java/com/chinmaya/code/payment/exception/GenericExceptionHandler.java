@@ -21,19 +21,19 @@ import java.time.ZoneOffset;
 @RequiredArgsConstructor
 public class GenericExceptionHandler {
 
-    @ExceptionHandler({ServletRequestBindingException.class})
-    public ResponseEntity<Object> handleServletRequestBindingException(ServletRequestBindingException ex, WebRequest request) {
-        log.error("handleMethodArgumentNotValid: {}",ex.getMessage());
-        ErrorResponse response = ErrorResponse.builder()
-                .status(Status.F.getStaus())
-                .httpStatusCode(HttpStatus.BAD_REQUEST.value())
-                .errorCode(HttpStatus.BAD_REQUEST.name())
-                .detail(ex.getMessage())
-                .timeStamp(LocalDateTime.now(ZoneOffset.UTC))
-                .uri(request.getDescription(false))
-                .build();
-        return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
-    }
+//    @ExceptionHandler({ServletRequestBindingException.class})
+//    public ResponseEntity<Object> handleServletRequestBindingException(ServletRequestBindingException ex, WebRequest request) {
+//        log.error("handleMethodArgumentNotValid: {}",ex.getMessage());
+//        ErrorResponse response = ErrorResponse.builder()
+//                .status(Status.F.getStaus())
+//                .httpStatusCode(HttpStatus.BAD_REQUEST.value())
+//                .errorCode(HttpStatus.BAD_REQUEST.name())
+//                .detail(ex.getMessage())
+//                .timeStamp(LocalDateTime.now(ZoneOffset.UTC))
+//                .uri(request.getDescription(false))
+//                .build();
+//        return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
+//    }
 
 
 

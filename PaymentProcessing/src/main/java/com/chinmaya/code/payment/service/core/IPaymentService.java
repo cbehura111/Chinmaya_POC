@@ -1,7 +1,7 @@
 package com.chinmaya.code.payment.service.core;
 
-import com.chinmaya.cache.payload.core.Header;
-import com.chinmaya.cache.payload.core.Response;
+import com.chinmaya.utils.payload.core.Header;
+import com.chinmaya.utils.payload.core.Response;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
 import com.chinmaya.code.payment.dto.PaymentRequestData;
 import reactor.core.publisher.Mono;

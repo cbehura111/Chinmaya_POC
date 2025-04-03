@@ -1,22 +1,23 @@
 package com.chinmaya.code.payment.service.core.impl;
 
-import com.chinmaya.cache.interfaceAdapter.service.InterfaceAdapter;
-import com.chinmaya.cache.interfaceAdapter.utils.AdapterUtil;
-import com.chinmaya.cache.payload.core.*;
-import com.chinmaya.cache.utils.CommonUtils;
-import com.chinmaya.cache.utils.CommonUtilsCBS;
-import com.chinmaya.cache.utils.CustomDynamicValue;
 import com.chinmaya.code.config.IdGenerator;
+import com.chinmaya.code.payment.dto.PaymentRequestData;
 import com.chinmaya.code.payment.dto.request.GenericRequest;
 import com.chinmaya.code.payment.dto.request.GenericRequestFields;
 import com.chinmaya.code.payment.dto.request.UserEnquiryRequest;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
-import com.chinmaya.code.payment.dto.PaymentRequestData;
 import com.chinmaya.code.payment.service.core.IPaymentService;
 import com.chinmaya.code.payment.service.core.IPaymentStrategy;
 import com.chinmaya.code.payment.utils.EncryptionDecryption;
 import com.chinmaya.code.payment.utils.FisdomEncDecUtils;
 import com.chinmaya.utils.constants.CommonConstants;
+import com.chinmaya.utils.interfaceAdapter.service.InterfaceAdapter;
+import com.chinmaya.utils.interfaceAdapter.utils.AdapterUtil;
+import com.chinmaya.utils.payload.core.*;
+import com.chinmaya.utils.utils.CommonUtils;
+import com.chinmaya.utils.utils.CommonUtilsCBS;
+import com.chinmaya.utils.utils.CustomDynamicValue;
+import com.chinmaya.utils.utils.FallbackUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
@@ -31,11 +32,10 @@ import java.time.Instant;
 import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class PaymentServiceImpl implements IPaymentService {
-    @Autowired
-    private Map<String, IPaymentStrategy> paymentStrategies;
+
+    private final Map<String, IPaymentStrategy> paymentStrategies;
 
     private final IdGenerator idGenerator;
 
@@ -44,6 +44,14 @@ public class PaymentServiceImpl implements IPaymentService {
     private final InterfaceAdapter interfaceAdapter;
 
     private final AdapterUtil adapterUtil;
+
+    public PaymentServiceImpl(Map<String, IPaymentStrategy> paymentStrategies, IdGenerator idGenerator) {
+        this.paymentStrategies = paymentStrategies;
+        this.idGenerator = idGenerator;
+        this.commonUtilsCBS = new CommonUtilsCBS();
+        this.interfaceAdapter = new InterfaceAdapter();
+        this.adapterUtil = new AdapterUtil();
+    }
 
     /**
      * @param paymentData
@@ -149,5 +157,9 @@ public class PaymentServiceImpl implements IPaymentService {
                 return Mono.just(response);
             }
         });
+    }
+    public Mono<Response> fetchBlockChannelFallback(Header header, Exception e) {
+        log.error("Update user fallback error : {}", e);
+        return FallbackUtils.genericFallbackMono();
     }
 }

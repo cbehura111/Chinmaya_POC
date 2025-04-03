@@ -1,0 +1,25 @@
+{
+    "Online Payments": {
+        "Redirection links:" : "both IB and MB",
+        "Utility bill payments" : "https://”Mahaconnect”/jsp/BillPay.htm",
+        "LIC premium payment" : "http://www.licindia.in/",
+        "SBI credit card payment": "https://www.billdesk.com/pgidsk/pgijsp/sbicard/SBI_card.jsp",
+        "Content to be added under Online Payments" : "<p>Using your Bank of Maharashtra Internet Banking Account, you can pay your bills like Electricity, Telephone, Satellite Television, Mobile Phone etc. You can also pay your Insurance Premium, Credit Card Bills etc. You can shop online using Bank of Maharashtra Account. Please visit the Online Shopping/Gifts Link.</p>",
+        "How to Pay?" : "<ol><li>Visit the Billers website, go for online payment option.<li>Select Mode of Payment as Internet Banking and then select Bank of Maharashtra from the list of the Banks.<li>You will be redirected to Bank of Maharashtra Payment gateway.<li>Give your credentials, enter your transaction password and confirm the transaction.</ol>"
+    },
+
+   "Maha Fast Pay":{
+        "Redirection links:" : "both IB and MB",
+        "Maha Fast Pay" : "https://www.billdesk.com/web/",
+        "Content to be added under Services" : "<h1>MAHA FAST PAY</h1><br><p>Instead of visiting every biller website, you can directly pay, UTILITY PAYMENTS/POSTPAID MOBILE/INSURANCE/LOAN PAYMENTS/SUBSCRIPTIONS/ DONATIONS etc. using your Bank of Maharashtra Internet Banking Account.",
+        "How to Pay?" : "<ul><li>Select your type of payment and provide the bill details.<li>You will be redirected to Bank of Maharashtra Payment gateway.<li>Give your credentials, enter your transaction password and confirm the transaction.<li>Online Receipt will be generated.</ul>"
+   },
+
+   "Tax Payments" : {
+        "Redirection links:" : "both IB and MB",
+        "GST tax payment" : "https://www.gst.gov.in/",
+        "Direct taxes/income tax/TDS" : "https://”___New URL to be added ____” /jsp/ePayment_DirectTaxes.html",
+        "GRIPS" : "https://wbifms.gov.in/GRIPS",
+        "Delhi VAT online payment" : "https://”___New URL to be added_______”/jsp/ePayment_Dvat.htm"
+   }
+}

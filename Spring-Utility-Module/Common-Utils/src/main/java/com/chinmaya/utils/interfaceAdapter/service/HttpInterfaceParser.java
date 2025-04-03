@@ -1,6 +1,6 @@
 package com.chinmaya.utils.interfaceAdapter.service;
 
-import com.chinmaya.cache.interfaceAdapter.utils.*;
+import com.chinmaya.utils.interfaceAdapter.utils.*;
 import com.chinmaya.utils.interfaceAdapter.utils.*;
 import com.chinmaya.utils.payload.core.Header;
 import org.apache.logging.log4j.LogManager;

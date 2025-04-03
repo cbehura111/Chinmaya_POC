@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Page1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78b89bf6-d13d-4f1b-a614-da78704ec423">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="txnDate" class="java.lang.String"/>
+	<parameter name="txnStatus" class="java.lang.String"/>
+	<parameter name="txnRefNum" class="java.lang.String"/>
+	<parameter name="amount" class="java.lang.String"/>
+	<parameter name="merchantCode" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<line>
+				<reportElement mode="Opaque" x="120" y="100" width="360" height="1" forecolor="#D2D4D6" uuid="65ba7bc9-e518-4ab1-8de6-e01ce9761cce">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="170" width="100" height="20" forecolor="#080808" uuid="15c6e84e-163c-493b-ba27-c31a8961005e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="140" width="100" height="20" forecolor="#050505" uuid="43c363b9-7413-4454-8a37-d296532e382b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Transaction status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="200" width="130" height="20" forecolor="#070808" uuid="1d092e41-1565-44f3-9220-fa25ecfddef4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Transaction Ref Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="170" width="140" height="20" uuid="74d25903-c347-46ce-9d04-b7155e0bff4b"/>
+				<textFieldExpression><![CDATA[$P{txnDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="140" width="140" height="20" uuid="951e29ee-5449-4890-874d-737a18ab0760"/>
+				<textFieldExpression><![CDATA[$P{txnStatus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="200" width="140" height="20" uuid="d2c81f64-72dd-47cf-97cf-c9be07a99277"/>
+				<textFieldExpression><![CDATA[$P{txnRefNum}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="30" y="30" width="40" height="40" uuid="ebfd26e1-b6ed-4dc3-a13b-8ea52ca8f026"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="70" width="130" height="20" uuid="d8f20217-141c-4afe-8d54-445c49d7f61b"/>
+				<textElement>
+					<font fontName="ArialBold" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Merchant Payment Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="110" width="100" height="20" uuid="8bba2f57-29cb-4ff2-adbe-1c5f1332c443"/>
+				<text><![CDATA[Merchant Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="230" width="100" height="20" uuid="a5b1e2c8-aeb7-438c-bfd1-18b4f1c62361"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="230" width="140" height="20" uuid="0b15d71f-9bf2-4900-ae9d-5e744e2507e6"/>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="110" width="140" height="20" uuid="7e1f7b5f-083a-4cbf-b917-8e4b8b7ffaf0"/>
+				<textFieldExpression><![CDATA[$P{merchantCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="20" width="290" height="30" uuid="0f4095c3-ec31-4d8e-9b15-acd7622ccb4e"/>
+				<textElement textAlignment="Center">
+					<font fontName="ArialBold" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Merchant Payment Receipt]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,35 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "vendor": "${CONST~IEXCEEDLSB}",
+    "client": "${CONST~BOM}",
+    "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+    "data": "${REQUEST~apiRequest.requestObj.data}",
+    "reqTimestamp": "${CUSTOMJAVACODE~generateRequestTimestamp}",
+    "chksum": "${CONST~13456}"
+  },
+  "responseDef": {
+    "accountNumber": "${RESPONSE~accountNumber}",
+    "customerName": "${RESPONSE~customerName}",
+    "accountName": "${RESPONSE~accountName}",
+    "homeBranch": "${RESPONSE~homeBranch}",
+    "accOpnDate": "${RESPONSE~accOpnDate}",
+    "accountStatus": "${RESPONSE~accountStatus}",
+    "holdAmount": "${RESPONSE~holdAmount}",
+    "availbal": "${RESPONSE~availbal}",
+    "uncleareadBal": "${RESPONSE~uncleareadBal}",
+    "accountType": "${RESPONSE~productCode}"
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  }
+}

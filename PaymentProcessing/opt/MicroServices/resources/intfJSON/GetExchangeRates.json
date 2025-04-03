@@ -1,0 +1,25 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "fromCcy": "${REQUEST~apiRequest.requestObj.accountCcy}",
+    "toCcy": "${REQUEST~apiRequest.requestObj.transactionCcy}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "serviceStatusMsg": "${RESPONSE~serviceStatusMsg}",
+    "exchangeRate": "${RESPONSE~exchangeRate}"
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

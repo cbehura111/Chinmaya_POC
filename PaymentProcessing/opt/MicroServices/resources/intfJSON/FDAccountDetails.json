@@ -1,0 +1,30 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "reqTimestamp":"${REQUEST~apiRequest.requestObj.reqTimestamp}", 
+      "data":
+      {
+      "requestType":"${REQUEST~apiRequest.requestObj.data.requestType}",
+      "requestId":"${REQUEST~apiRequest.requestObj.data.requestId}",
+      "accountNo":"${REQUEST~apiRequest.requestObj.data.accountNo}"
+      }, 
+    "vendor":"${REQUEST~apiRequest.requestObj.vendor}", 
+    "requestId":"${REQUEST~apiRequest.requestObj.requestId}", 
+    "client":"${REQUEST~apiRequest.requestObj.client}", 
+    "chksum":"${REQUEST~apiRequest.requestObj.chksum}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

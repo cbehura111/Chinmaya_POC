@@ -1,0 +1,36 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "vendor": "${REQUEST~apiRequest.requestObj.vendor}",
+    "client": "${REQUEST~apiRequest.requestObj.client}",
+    "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+    "requestType": "${REQUEST~apiRequest.requestObj.requestType}",
+    "data": {
+      "requestType": "${REQUEST~apiRequest.requestObj.data.requestType}",
+      "cif": "${REQUEST~apiRequest.requestObj.data.cif}",
+      "debitAcct": "${REQUEST~apiRequest.requestObj.data.debitAcct}",
+      "amount": "${REQUEST~apiRequest.requestObj.data.amount}",
+      "typeOfDeposit": "${REQUEST~apiRequest.requestObj.data.typeOfDeposit}",
+      "period": "${REQUEST~apiRequest.requestObj.data.period}",
+      "typeOfTerm": "${REQUEST~apiRequest.requestObj.data.typeOfTerm}",
+      "frequency": "${REQUEST~apiRequest.requestObj.data.frequency}",
+      "requestId": "${REQUEST~apiRequest.requestObj.data.requestId}"
+    },
+    "reqTimestamp": "${REQUEST~apiRequest.requestObj.reqTimestamp}",
+    "chksum": "${REQUEST~apiRequest.requestObj.chksum}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout": "10"
+}

@@ -1,0 +1,44 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": {
+        "branchCode": "${RESPONSE~accounts.branchCode}",
+        "branchName": "${RESPONSE~accounts.branchName}",
+        "accOpenDate": "${RESPONSE~accounts.accOpenDate}",
+        "loanType": "${RESPONSE~accounts.loanType}",
+        "disbursementDate~LIT_LN_DLBL4~ವಿತರಣಾ ದಿನಾಂಕ": "${RESPONSE~accounts.disbursementDate}",
+        "maturityDate~LIT_LN_DLBL5~ಮುಕ್ತಾಯ ದಿನಾಂಕ": "${RESPONSE~accounts.maturityDate}",
+        "productname~LIT_LN_DLBL1~ಉತ್ಪನ್ನ ವಿವರಗಳು": "${RESPONSE~accounts.productname}",
+        "loanAmount": "${RESPONSE~accounts.loanAmount}",
+        "currency": "${RESPONSE~accounts.currency}",
+        "outstandingBalance": "${RESPONSE~accounts.outstandingBalance}",
+        "emiAmount": "${RESPONSE~accounts.emiAmount}",
+        "disbursedAmount": "${RESPONSE~accounts.disbursedAmount}",
+        "interestRate": "${RESPONSE~accounts.interestRate}",
+        "customerName~LIT_LN_DLBL2~ಖಾತೆದಾರರ ಹೆಸರು": "${RESPONSE~accounts.customerName}",
+        "dob": "${RESPONSE~accounts.dob}",
+        "emailid": "${RESPONSE~accounts.emailid}",
+        "mobileNo": "${RESPONSE~accounts.mobileNo}",
+        "accountNo~LIT_LN_DLBL3~ಖಾತೆ ಸಂಖ್ಯೆ": "${RESPONSE~accounts.accountNo}",
+        "availBalanceFcy": "${RESPONSE~accounts.availBalanceFcy}"
+    }
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

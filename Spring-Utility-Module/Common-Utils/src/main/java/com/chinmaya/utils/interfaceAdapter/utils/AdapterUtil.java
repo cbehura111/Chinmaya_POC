@@ -1,8 +1,8 @@
 package com.chinmaya.utils.interfaceAdapter.utils;
 
 import com.chinmaya.utils.interfaceAdapter.parser.ResponseParser;
-import com.chinmaya.cache.payload.core.*;
-import com.chinmaya.cache.utils.CommonUtils;
+import com.chinmaya.utils.payload.core.*;
+import com.chinmaya.utils.utils.CommonUtils;
 import com.chinmaya.utils.constants.CommonConstants;
 import com.chinmaya.utils.payload.core.*;
 import com.fasterxml.jackson.databind.ObjectMapper;

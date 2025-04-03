@@ -1,0 +1,36 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+ "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_CLS_DEP_DLBL1~Account Number": "${RESPONSE~accounts[].accountNo}",
+		"closureDate~LIT_CLS_DEP_DLBL2~Closure Date": "${RESPONSE~accounts[].closureDate}",
+		"closureType~LIT_CLS_DEP_DLBL3~Closure Type": "${RESPONSE~accounts[].closureType}",
+        "creditAcctNo~LIT_CLS_DEP_DLBL4~Credit Account Number": "${RESPONSE~accounts[].creditAccountNumber}",
+		"depositType~LIT_CLS_DEP_DLBL5~Deposit Type": "${RESPONSE~accounts[].depositType}",
+		"withdrawAmount~LIT_CLS_DEP_DLBL6~Withdrawal Amount": "${RESPONSE~accounts[].withdrawAmount}",
+		"preClosureCharges~LIT_CLS_DEP_DLBL7~Pre closure charges": "${RESPONSE~accounts[].preClosureCharges}",
+        "receivableAmount~LIT_CLS_DEP_DLBL8~Receivable Amount": "${RESPONSE~accounts[].receivableAmount}",
+		"currency": "${RESPONSE~accounts[].currency}",
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

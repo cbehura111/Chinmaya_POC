@@ -1,0 +1,37 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~closedAccounts[].customerId}",
+		"accountNo~LIT_CLS_CASA_DLBL1~رقم حساب": "${RESPONSE~closedAccounts[].accountNo}",
+        "accountType~LIT_CLS_CASA_DLBL2~نوع الحساب": "${RESPONSE~closedAccounts[].accountType}",
+        "currency~LIT_CLS_CASA_DLBL3~عملة": "${RESPONSE~closedAccounts[].currency}",
+        "branchCode~LIT_CLS_CASA_DLBL4~رمز الفرع": "${RESPONSE~closedAccounts[].branchCode}",
+        "branchName~LIT_CLS_CASA_DLBL5~اسم الفرع": "${RESPONSE~closedAccounts[].branchName}",
+        "branchAddress~LIT_CLS_CASA_DLBL6~عنوان فرع": "${RESPONSE~closedAccounts[].branchAddress}",
+        "accountName~LIT_CLS_CASA_DLBL7~اسم صاحب الحساب": "${RESPONSE~closedAccounts[].accountName}",
+        "accCloseDate~LIT_CLS_CASA_DLBL8~تاريخ إغلاق الحساب": "${RESPONSE~closedAccounts[].accCloseDate}",
+        "productName~LIT_CLS_CASA_DLBL9~اسم المنتج": "${RESPONSE~closedAccounts[].productName}",
+        "closureReason~LIT_CLS_CASA_DLBL10~سبب الإغلاق": "${RESPONSE~closedAccounts[].closureReason}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

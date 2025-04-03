@@ -1,0 +1,35 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+ "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_CLS_LN_DLBL1~Account Number": "${RESPONSE~accounts[].accountNo}",
+        "loanType~LIT_CLS_LN_DLBL2~Loan Type": "${RESPONSE~accounts[].loanType}",
+        "currency~LIT_CLS_LN_DLBL3~Currency": "${RESPONSE~accounts[].currency}",
+        "loanAmount~LIT_CLS_LN_DLBL4~Loan Amount": "${RESPONSE~accounts[].loanAmount}",
+        "preclosureCharges~LIT_CLS_LN_DLBL5~Pre Closure Charges": "${RESPONSE~accounts[].preclosureCharges}",
+        "interestAmount~LIT_CLS_LN_DLBL6~Interest Amount": "${RESPONSE~accounts[].interestAmount}",
+        "closureType~LIT_CLS_LN_DLBL7~Closure Type": "${RESPONSE~accounts[].closureType}",
+        "closureDate~LIT_CLS_LN_DLBL8~Closure Date": "${RESPONSE~accounts[].closureDate}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

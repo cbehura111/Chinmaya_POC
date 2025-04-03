@@ -1,0 +1,30 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": "",
+    "BANKCODE": "00015",
+    "CHANNEL": "CBS",
+    "STOKEN": "BPM_TOKEN"
+  },
+  "requestDef": {
+    "REQTYPE": "${REQUEST~apiRequest.requestObj.REQTYPE}",
+    "REQDTTM": "${REQUEST~apiRequest.requestObj.REQDTTM}",
+    "REQRRN": "${REQUEST~apiRequest.requestObj.REQRRN}",
+    "CRDNO": "${REQUEST~apiRequest.requestObj.CRDNO}",
+    "TXNDATE": "${REQUEST~apiRequest.requestObj.TXNDATE}",
+    "PAYAMT": "${REQUEST~apiRequest.requestObj.PAYAMT}",
+    "PAYMOD": "${REQUEST~apiRequest.requestObj.PAYMOD}",
+    "UTR": "${REQUEST~apiRequest.requestObj.UTR}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout": "10"
+}

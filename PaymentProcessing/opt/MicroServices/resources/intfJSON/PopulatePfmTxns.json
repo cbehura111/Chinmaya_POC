@@ -1,0 +1,40 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "apiRequest": {
+      "appId": "${REQUEST~apiRequest.appId}",
+      "userId": "${REQUEST~apiRequest.userId}",
+      "requestObj": {
+        "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+        "txnId": "${REQUEST~apiRequest.requestObj.txnId}",
+        "accountNumber": "${REQUEST~apiRequest.requestObj.accountNumber}",
+        "accountCcy": "${REQUEST~apiRequest.requestObj.accountCcy}",
+        "categoryCode": "${REQUEST~apiRequest.requestObj.categoryCode}",
+        "userCategoryCode": "${REQUEST~apiRequest.requestObj.userCategoryCode}",
+        "txnCode": "${REQUEST~apiRequest.requestObj.txnCode}",
+        "txnDesc": "${REQUEST~apiRequest.requestObj.txnDesc}",
+        "crDrIndicator": "${REQUEST~apiRequest.requestObj.crDrIndicator}",
+        "txnAmountLcy": "${REQUEST~apiRequest.requestObj.txnAmountLcy}",
+        "txnAmountFcy": "${REQUEST~apiRequest.requestObj.txnAmountFcy}",
+        "txnCcy": "${REQUEST~apiRequest.requestObj.txnCcy}",
+        "sourceSystem": "${REQUEST~apiRequest.requestObj.sourceSystem}",
+        "sourceRefNumber": "${REQUEST~apiRequest.requestObj.sourceRefNumber}",
+        "iconCode": "${REQUEST~apiRequest.requestObj.iconCode}"
+      }
+    }
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

@@ -4,7 +4,6 @@ import com.chinmaya.utils.interfaceAdapter.utils.AdapterUtil;
 import com.chinmaya.utils.interfaceAdapter.utils.ParserUtils;
 import com.chinmaya.utils.interfaceAdapter.utils.URLUtils;
 import com.chinmaya.utils.payload.core.Header;
-import com.chinmaya.cache.service.LogExternalReqRes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;

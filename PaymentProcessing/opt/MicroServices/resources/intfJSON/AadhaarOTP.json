@@ -1,0 +1,25 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "POST",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+        "Authorization": "",
+        "clientId": "e598911681fe83365fefce9b2fcb7c30",
+        "clientSecret": "15317a8a58095fdc21aa72f13bb41c7cbdcab0f2cdca7cc9025000fc4d2a2471"
+    },
+    "requestDef": {
+        "smEncryptedData": "${REQUEST~apiRequest.requestObj.smEncryptedData}"
+    },
+    "responseDef": {
+        "referenceId": "${RESPONSE~referenceId}",
+        "responseMessage": "${RESPONSE~responseMessage}",
+        "responseCode": "${RESPONSE~responseCode}"
+    },
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    }
+}

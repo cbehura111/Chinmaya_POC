@@ -6,7 +6,7 @@ import com.chinmaya.utils.payload.core.Header;
 import com.chinmaya.utils.payload.core.Request;
 import com.chinmaya.utils.payload.core.RequestWrapper;
 import com.chinmaya.utils.payload.core.ResponseWrapper;
-import com.chinmaya.cache.utils.CommonUtils;
+import com.chinmaya.utils.utils.CommonUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

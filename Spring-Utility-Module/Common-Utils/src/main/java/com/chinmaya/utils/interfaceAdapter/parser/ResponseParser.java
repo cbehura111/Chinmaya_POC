@@ -1,6 +1,6 @@
 package com.chinmaya.utils.interfaceAdapter.parser;
 
-import com.chinmaya.cache.utils.CustomDynamicValue;
+import com.chinmaya.utils.utils.CustomDynamicValue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;

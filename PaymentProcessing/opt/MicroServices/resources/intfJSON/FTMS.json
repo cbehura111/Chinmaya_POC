@@ -1,0 +1,55 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "apiRequest": {
+      "appId": "${REQUEST~apiRequest.appId}",
+      "userId": "${REQUEST~apiRequest.userId}",
+      "interfaceName": "${REQUEST~apiRequest.interfaceName}",
+      "emailId": "${REQUEST~apiRequest.emailId}",
+      "mobileNo": "${REQUEST~apiRequest.mobileNo}",
+      "deviceId": "${REQUEST~apiRequest.deviceId}",
+      "requestObj": {
+        "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+        "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+        "debitAcctCcy": "${REQUEST~apiRequest.requestObj.debitAcctCcy}",
+        "transactionType": "${REQUEST~apiRequest.requestObj.transactionType}",
+        "transactionAmount": "${REQUEST~apiRequest.requestObj.transactionAmount}",
+        "transferType": "${REQUEST~apiRequest.requestObj.transferType}",
+        "benefName": "${REQUEST~apiRequest.requestObj.benefName}",
+        "benefShortName": "${REQUEST~apiRequest.requestObj.benefShortName}",
+        "benefAcctNo": "${REQUEST~apiRequest.requestObj.benefAcctNo}",
+        "transRemarks": "${REQUEST~apiRequest.requestObj.transRemarks}",
+        "scheduleId": "${REQUEST~apiRequest.requestObj.scheduleId}",
+        "txnScheduleFromDate": "${REQUEST~apiRequest.requestObj.txnScheduleFromDate}",
+        "transactionCcy": "${REQUEST~apiRequest.requestObj.transactionCcy}",
+        "chargeAmount": "${REQUEST~apiRequest.requestObj.chargeAmount}",
+        "txnMode": "${REQUEST~apiRequest.requestObj.txnMode}",
+        "txnLmtGrp": "${REQUEST~apiRequest.requestObj.apikey}",
+        "benefBankName": "${REQUEST~apiRequest.requestObj.benefBankName}",
+        "debitProdType": "${REQUEST~apiRequest.requestObj.debitProdType}",
+        "amountInDebitAccCcy": "${REQUEST~apiRequest.requestObj.amountInDebitAccCcy}",
+        "benefAcctType": "${REQUEST~apiRequest.requestObj.benefAcctType}",
+        "debitAcctBrnch": "${REQUEST~apiRequest.requestObj.debitAcctBrnch}",
+        "creditCardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+        "otherPaymentDetails": "${REQUEST~apiRequest.requestObj.otherPaymentDetails}",
+        "bankcode": "${REQUEST~apiRequest.requestObj.bankcode}",
+        "eqTransactionAmount": "${REQUEST~apiRequest.requestObj.eqTransactionAmount}",
+        "transactionMode": "${REQUEST~apiRequest.requestObj.transactionMode}"
+      }
+    }
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

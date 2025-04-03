@@ -1,0 +1,24 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "vendor": "${CONST~IEXCEEDLSB}",
+    "client": "${CONST~BOM}",
+    "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+    "data": "${REQUEST~apiRequest.requestObj.data}",
+    "reqTimestamp": "${CUSTOMJAVACODE~generateRequestTimestamp}",
+    "chksum": "${CONST~13456}"
+  },
+  "responseDef":"",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  }
+}

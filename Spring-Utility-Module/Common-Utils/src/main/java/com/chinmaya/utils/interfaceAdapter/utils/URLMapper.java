@@ -1,8 +1,8 @@
 package com.chinmaya.utils.interfaceAdapter.utils;
 
-import com.chinmaya.cache.utils.BaseDynamicValue;
-import com.chinmaya.cache.utils.CommonUtils;
-import com.chinmaya.cache.utils.CustomDynamicValue;
+import com.chinmaya.utils.utils.BaseDynamicValue;
+import com.chinmaya.utils.utils.CommonUtils;
+import com.chinmaya.utils.utils.CustomDynamicValue;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

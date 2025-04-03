@@ -1,13 +1,12 @@
 package com.chinmaya.code.payment.resource;
 
-import com.chinmaya.cache.payload.core.Header;
-import com.chinmaya.cache.payload.core.Response;
-import com.chinmaya.cache.payload.core.ResponseWrapper;
-import com.chinmaya.cache.utils.CommonUtils;
 import com.chinmaya.code.payment.dto.PaymentRequestData;
 import com.chinmaya.code.payment.dto.response.BaseResponse;
-import com.chinmaya.code.payment.dto.response.PaymentResponse;
 import com.chinmaya.code.payment.service.core.IPaymentService;
+import com.chinmaya.utils.payload.core.Header;
+import com.chinmaya.utils.payload.core.Response;
+import com.chinmaya.utils.payload.core.ResponseWrapper;
+import com.chinmaya.utils.utils.CommonUtils;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -16,7 +15,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.filters.AddDefaultCharsetFilter;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

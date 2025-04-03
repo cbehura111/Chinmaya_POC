@@ -1,8 +1,8 @@
 package com.chinmaya.utils.interfaceAdapter.utils;
 
-import com.chinmaya.cache.utils.BaseDynamicValue;
-import com.chinmaya.cache.utils.CommonUtils;
-import com.chinmaya.cache.utils.CustomDynamicValue;
+import com.chinmaya.utils.utils.BaseDynamicValue;
+import com.chinmaya.utils.utils.CommonUtils;
+import com.chinmaya.utils.utils.CustomDynamicValue;
 import com.github.wnameless.json.flattener.JsonFlattener;
 import com.github.wnameless.json.unflattener.JsonUnflattener;
 import org.apache.logging.log4j.LogManager;

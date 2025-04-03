@@ -1,7 +1,6 @@
 package com.chinmaya.utils.interfaceAdapter.service;
 
 import com.chinmaya.utils.payload.core.Header;
-import com.chinmaya.cache.service.LogExternalReqRes;
 import com.chinmaya.utils.exception.CustomException;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;

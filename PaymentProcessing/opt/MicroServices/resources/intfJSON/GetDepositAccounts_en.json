@@ -1,0 +1,54 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "primaryCcy": "${REQUEST~apiRequest.requestObj.primaryCcy}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_DEP_DLBL3~Account Number": "${RESPONSE~accounts[].accountNo}",
+        "branchCode": "${RESPONSE~accounts[].branchCode}",
+        "branchName": "${RESPONSE~accounts[].branchName}",
+        "accOpenDate": "${RESPONSE~accounts[].accOpenDate}",
+        "accountType": "${RESPONSE~accounts[].accountType}",
+        "productName": "${RESPONSE~accounts[].productName}",
+        "currency~LIT_DEP_DLBL4~Currency": "${RESPONSE~accounts[].currency}",
+        "depositAmount~LIT_DEP_DLBL7~Deposit Amount": "${RESPONSE~accounts[].depositAmount}",
+        "principalAmount": "${RESPONSE~accounts[].principalAmount}",
+        "interestAmount": "${RESPONSE~accounts[].interestAmount}",
+        "maturityAmount~LIT_DEP_DLBL8~Maturity Amount": "${RESPONSE~accounts[].maturityAmount}",
+        "interestRate~LIT_DEP_DLBL5~Interest Rate": "${RESPONSE~accounts[].interestRate}",
+        "tenorInDays": "${RESPONSE~accounts[].tenorInDays}",
+        "tenorInMonths": "${RESPONSE~accounts[].tenorInMonths}",
+        "tenorInYears": "${RESPONSE~accounts[].tenorInYears}",
+        "interestPayout~LIT_DEP_DLBL6~Interest Payout": "${RESPONSE~accounts[].interestPayout}",
+        "nomineeName~LIT_DEP_DLBL11~Nominee Name": "${RESPONSE~accounts[].nomineeName}",
+        "nomineeAddress~LIT_DEP_DLBL12~Nominee Address": "${RESPONSE~accounts[].nomineeAddress}",
+        "accountName~LIT_DEP_DLBL1~Account Holder Name": "${RESPONSE~accounts[].accountName}",
+        "maturityDate~LIT_DEP_DLBL10~Maturity Date": "${RESPONSE~accounts[].maturityDate}",
+        "availBalanceFcy": "${RESPONSE~accounts[].availBalanceFcy}",
+        "debitAcctNo": "${RESPONSE~accounts[].debitAcctNo}",
+        "payoutAccount": "${RESPONSE~accounts[].payoutAccount}",
+        "autoDebit~LIT_DEP_DLBL9~Payment Frequency": "${RESPONSE~accounts[].autoDebit}",
+        "autoDebitAccNo": "${RESPONSE~accounts[].autoDebitAccNo}",
+        "autoDebitDate": "${RESPONSE~accounts[].autoDebitDate}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

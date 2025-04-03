@@ -3,7 +3,7 @@ package com.chinmaya.utils.interfaceAdapter.service;
 import com.chinmaya.utils.interfaceAdapter.utils.AdapterUtil;
 import com.chinmaya.utils.interfaceAdapter.utils.ParserUtils;
 import com.chinmaya.utils.payload.core.Header;
-import com.chinmaya.cache.utils.CommonUtils;
+import com.chinmaya.utils.utils.CommonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,17 +21,17 @@ import static com.chinmaya.utils.constants.CommonConstants.API_REQUEST;
 @Component
 public class InterfaceAdapter {
 
-	@Autowired
-	private HttpInterfaceParser httpInterfaceParser;
+	
+	private final HttpInterfaceParser httpInterfaceParser;
 
-	@Autowired
-	private SoapInterfaceParser soapInterfaceParser;
+	
+	private final SoapInterfaceParser soapInterfaceParser;
 
-	@Autowired
-	private AdapterUtil adapterUtil;
+	
+	private final AdapterUtil adapterUtil;
 
-	@Autowired
-	private ParserUtils parserUtils;
+	
+	private final ParserUtils parserUtils;
 
 	private static final Logger logger = LogManager.getLogger(InterfaceAdapter.class);
 
@@ -43,7 +43,14 @@ public class InterfaceAdapter {
 	
 	private static final String EFRMS_SCORE = "EFRMSScore";
 
-	/**
+    public InterfaceAdapter() {
+        this.httpInterfaceParser = new HttpInterfaceParser();
+        this.soapInterfaceParser = new SoapInterfaceParser();
+        this.adapterUtil = new AdapterUtil();
+        this.parserUtils = new ParserUtils();
+    }
+
+    /**
 	 * Method to call External Rest API by reading the content of external Interface
 	 * file.
 	 * 

@@ -1,0 +1,47 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accounts": {
+        "customerId": "${RESPONSE~accounts.customerId}",
+        "accountNo": "${RESPONSE~accounts.accountNo}",
+        "branchCode": "${RESPONSE~accounts.branchCode}",
+        "availBalance": "${RESPONSE~accounts.availBalance}",
+        "currentBalance": "${RESPONSE~accounts.currentBalance}",
+        "withdrawBalance": "${RESPONSE~accounts.withdrawBalance}",
+        "overdraftLimit": "${RESPONSE~accounts.overdraftLimit}",
+        "branchName": "${RESPONSE~accounts.branchName}",
+        "bankName": "${RESPONSE~accounts.bankName}",
+        "accountType": "${RESPONSE~accounts.accountType}",
+        "productName": "${RESPONSE~accounts.productName}",
+        "currency": "${RESPONSE~accounts.currency}",
+        "ifsc": "${RESPONSE~accounts.ifsc}",
+        "relationship": "${RESPONSE~accounts.relationShip}",
+        "openedDate": "${RESPONSE~accounts.openedDate}",
+        "lienAmount": "${RESPONSE~accounts.lienAmount}",
+        "bankAddress": "${RESPONSE~accounts.bankAddress}",
+        "acctName": "${RESPONSE~accounts.acctName}",
+        "jointHolderName": "${RESPONSE~accounts.jointHolderName}",
+        "emailFrequency": "${RESPONSE~accounts.emailFrequency}",
+        "nickName": "${RESPONSE~accounts.nickName}",
+        "creditAllowed": "${RESPONSE~accounts.creditAllowed}",
+        "debitAllowed": "${RESPONSE~accounts.debitAllowed}"
+      }
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

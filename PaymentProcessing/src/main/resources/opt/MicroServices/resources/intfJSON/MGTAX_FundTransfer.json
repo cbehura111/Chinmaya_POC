@@ -1,0 +1,47 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": "",
+    "appId":"{REQUEST~apiRequest.appId}",
+    "userId":"{REQUEST~apiRequest.userId}",
+    "interfaceId":"{REQUEST~apiRequest.requestObj.interfaceName}",
+    "masterTxnRefNo":"{CONST~123456}",
+    "deviceId": "{CONST~WEB}"
+
+  },
+  "requestDef": {
+  "apiRequest": {
+      "appId": "${REQUEST~apiRequest.appId}",
+      "userId": "${REQUEST~apiRequest.userId}",
+      "deviceId": "${REQUEST~apiRequest.deviceId}",
+      "interfaceName": "${REQUEST~apiRequest.requestObj.interfaceName}",
+      "requestObj": {
+        "amountInDebitAccCcy": "${REQUEST~apiRequest.fundTransReqFields.amount}",
+        "transactionAmount": "${REQUEST~apiRequest.fundTransReqFields.amount}",
+        "currency": "${REQUEST~apiRequest.fundTransReqFields.currency}",
+        "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+        "transactionType": "${CONST~WIT}",
+        "customerType": "${REQUEST~apiRequest.requestObj.customerType}",
+        "debitAcctCcy": "${REQUEST~apiRequest.fundTransReqFields.currency}",
+        "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+        "transactionCcy": "${REQUEST~apiRequest.fundTransReqFields.currency}",
+        "benefAcctNo": "${REQUEST~apiRequest.fundTransReqFields.benefAcctNo}",
+        "merchantCode": "${REQUEST~apiRequest.requestObj.merchantCode}",
+        "chargeAmount": "${CONST~0}",
+        "transferType": "${CONST~WIT}",
+        "requestId": "${REQUEST~apiRequest.fundTransReqFields.requestId}"
+      }
+    }
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"30"
+}

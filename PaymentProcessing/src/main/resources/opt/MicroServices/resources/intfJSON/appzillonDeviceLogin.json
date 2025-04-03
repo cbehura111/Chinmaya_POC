@@ -1,0 +1,23 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "mPIN": "${REQUEST~apiRequest.requestObj.mPIN}",
+    "deviceId": "${REQUEST~apiRequest.requestObj.deviceId}",
+    "deviceType": "${REQUEST~apiRequest.requestObj.deviceType}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

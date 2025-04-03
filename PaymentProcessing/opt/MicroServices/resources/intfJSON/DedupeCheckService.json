@@ -1,0 +1,35 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "POST",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+        "Authorization": ""
+    },
+    "requestDef": {
+        "vendor": "${CONST~IEXCEEDLSB}",
+        "client": "${CONST~BOM}",
+        "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+        "data": "${REQUEST~apiRequest.requestObj.data}",
+        "reqTimestamp": "${CUSTOMJAVACODE~generateRequestTimestamp}",
+        "chksum": "${CONST~13456}"
+    },
+    "responseDef": {
+        "customerDetails": {
+            "customerId": "${RESPONSE~customerNumber}",
+            "customerName": "${RESPONSE~customerName}",
+            "mobileNo": "${RESPONSE~mobileNumber}",
+            "panNumber": "${RESPONSE~panNumber}",
+            "aadharNumber": "${RESPONSE~aadharNumber}",
+            "accountNumber": "${RESPONSE~accountNumber}",
+            "isUserRegistered": "${RESPONSE~isUserRegistered}",
+            "status": "${RESPONSE~status}"
+        }
+    },
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    }
+}

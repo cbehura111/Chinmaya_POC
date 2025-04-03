@@ -1,0 +1,36 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "debitAmount": "${REQUEST~apiRequest.requestObj.transactionAmount}",
+    "cardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+    "transType": "${REQUEST~apiRequest.requestObj.transactionType}",
+    "currency": "${REQUEST~apiRequest.requestObj.currency}",
+    "benefAccNo": "${REQUEST~apiRequest.requestObj.benefAcctNo}",
+    "transCcy": "${REQUEST~apiRequest.requestObj.transactionCcy}",
+    "transRemarks": "${REQUEST~apiRequest.requestObj.transRemarks}"
+  },
+  "responseDef": {
+    "txnRefNo": "${RESPONSE~fundTransferResponse.txnRefNo}",
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "hostErrorMsg": "${RESPONSE~hostErrorMsg}",
+    "fundTransferResponse": {
+      "txnRefNo": "${RESPONSE~fundTransferResponse.txnRefNo}",
+      "txnDate": "${RESPONSE~fundTransferResponse.txnDate}",
+      "txnStatus": "${RESPONSE~fundTransferResponse.txnStatus}"
+    }
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

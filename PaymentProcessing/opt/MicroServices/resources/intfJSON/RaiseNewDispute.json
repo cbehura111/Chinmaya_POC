@@ -1,0 +1,32 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "requestDef": {
+    "accountNum": "${REQUEST~apiRequest.requestObj.payload.accountNum}",
+    "deliveryChannel": "${REQUEST~apiRequest.requestObj.payload.deliveryChannel}",
+    "disputeAmount": "${REQUEST~apiRequest.requestObj.payload.disputeAmount}",
+    "institution": "${REQUEST~apiRequest.requestObj.payload.institution}",
+    "reasonCode": "${REQUEST~apiRequest.requestObj.payload.reasonCode}",
+    "transAmount": "${REQUEST~apiRequest.requestObj.payload.transAmount}",
+    "transDate": "${REQUEST~apiRequest.requestObj.payload.transDate}",
+    "transSeqNum": "${REQUEST~apiRequest.requestObj.payload.transSeqNum}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~statusCode}",
+    "hostErrorMsg": "${RESPONSE~statusMessage}",
+    "hostErrorCode": "${RESPONSE~errorCode}",
+    "complaintId": "${RESPONSE~data.complaintId}",
+    "claimId": "${RESPONSE~data.claimId}",
+    "updatedOn": "${RESPONSE~data.updatedOn}"
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  }
+}

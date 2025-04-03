@@ -1,0 +1,28 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+   "billerAccountId": "${REQUEST~apiRequest.requestObj.billerAccountId}",
+    "billerId": "${REQUEST~apiRequest.requestObj.billerName}"
+  },
+  "responseDef": {
+    "billerAccountNumber": "${RESPONSE~billerAccId}",
+    "mobileNumber": "${RESPONSE~mobileNumber}",
+    "transactionAmount": "${RESPONSE~billAmount}",
+    "dueDate" : "${RESPONSE~billDueDate}",
+    "billerName" : "${RESPONSE~billerId}",
+    "currency" : "${RESPONSE~currency}"
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

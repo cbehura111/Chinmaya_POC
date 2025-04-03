@@ -1,0 +1,26 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "depositAmount": "${REQUEST~apiRequest.requestObj.depositAmount}",
+    "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+    "withdrawalAmount": "${REQUEST~apiRequest.requestObj.withdrawalAmount}",
+    "charges": "${REQUEST~apiRequest.requestObj.charges}",
+    "typeOfClosure": "${REQUEST~apiRequest.requestObj.typeOfClosure}",
+    "creditAcctNo": "${REQUEST~apiRequest.requestObj.creditAcctNo}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

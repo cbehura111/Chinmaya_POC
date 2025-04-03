@@ -1,0 +1,34 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "GET",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+        "Authorization": ""
+    },
+    "requestDef": {
+        "vendor": "${REQUEST~apiRequest.requestObj.vendor}",
+        "client": "${REQUEST~apiRequest.requestObj.client}",
+        "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+        "data": {
+            "requestType": "${REQUEST~apiRequest.requestObj.data.requestType}",
+            "requestId": "${REQUEST~apiRequest.requestObj.data.requestId}",
+            "requestMaker": "${REQUEST~apiRequest.requestObj.data.requestMaker}",
+            "requestChecker1": "${REQUEST~apiRequest.requestObj.data.requestChecker1}",
+            "requestChecker2": "${REQUEST~apiRequest.requestObj.data.requestChecker2}",
+            "requestBranch": "${REQUEST~apiRequest.requestObj.data.requestBranch}",
+            "custAcctNo": "${REQUEST~apiRequest.requestObj.data.custAcctNo}",
+            "noOfTransactions": "${REQUEST~apiRequest.requestObj.data.noOfTransactions}"
+        },
+        "reqTimestamp": "${REQUEST~apiRequest.requestObj.reqTimestamp}",
+        "chksum": "${REQUEST~apiRequest.requestObj.chksum}"
+    },
+    "responseDef": "",
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    },
+    "timeout": "10"
+}

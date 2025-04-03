@@ -1,0 +1,46 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "primaryCurrency": "${REQUEST~apiRequest.requestObj.primaryCurrency}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "branchCode": "${RESPONSE~accounts[].branchCode}",
+        "branchName": "${RESPONSE~accounts[].branchName}",
+        "accOpenDate": "${RESPONSE~accounts[].accOpenDate}",
+        "loanType": "${RESPONSE~accounts[].loanType}",
+        "disbursementDate": "${RESPONSE~accounts[].disbursementDate}",
+        "maturityDate": "${RESPONSE~accounts[].maturityDate}",
+        "productname": "${RESPONSE~accounts[].productname}",
+        "loanAmount": "${RESPONSE~accounts[].loanAmount}",
+        "currency": "${RESPONSE~accounts[].currency}",
+        "outstandingBalance": "${RESPONSE~accounts[].outstandingBalance}",
+        "emiAmount": "${RESPONSE~accounts[].emiAmount}",
+        "disbursedAmount": "${RESPONSE~accounts[].disbursedAmount}",
+        "interestRate": "${RESPONSE~accounts[].interestRate}",
+        "customerName": "${RESPONSE~accounts[].customerName}",
+        "dob": "${RESPONSE~accounts[].dob}",
+        "emailid": "${RESPONSE~accounts[].emailid}",
+        "mobileNo": "${RESPONSE~accounts[].mobileNo}",
+        "accountNo": "${RESPONSE~accounts[].accountNo}",
+        "availBalanceFcy": "${RESPONSE~accounts[].availBalanceFcy}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

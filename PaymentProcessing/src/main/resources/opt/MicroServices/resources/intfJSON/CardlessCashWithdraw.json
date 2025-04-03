@@ -1,0 +1,34 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "debitAmount": "${REQUEST~apiRequest.requestObj.transactionAmount}",
+    "debitAccNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+    "transType": "${REQUEST~apiRequest.requestObj.transactionType}",
+    "mobileNumber": "${REQUEST~apiRequest.requestObj.mobileNumber}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "hostErrorMsg": "${RESPONSE~hostErrorMsg}",
+    "txnRefNo": "${RESPONSE~fundTransferResponse.txnRefNo}",
+    "fundTransferResponse": {
+      "txnRefNo": "${RESPONSE~fundTransferResponse.txnRefNo}",
+      "txnDate": "${RESPONSE~fundTransferResponse.txnDate}",
+      "txnStatus": "${RESPONSE~fundTransferResponse.txnStatus}",
+      "withdrawalCode": "${RESPONSE~fundTransferResponse.withdrawalCode}"
+    }
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

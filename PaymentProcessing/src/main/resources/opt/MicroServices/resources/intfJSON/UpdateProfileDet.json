@@ -1,0 +1,24 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "debitAccountHolderAddress": "${REQUEST~apiRequest.requestObj.debitAccountHolderAddress}",
+    "mobileNumber": "${REQUEST~apiRequest.requestObj.mobileNumber}",
+    "action": "${REQUEST~apiRequest.requestObj.action}",
+    "email": "${REQUEST~apiRequest.requestObj.email}",
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

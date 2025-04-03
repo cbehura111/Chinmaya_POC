@@ -1,0 +1,35 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}"
+  },
+ "responseDef": {
+    "serviceStatusCode": "${RESPONSE~serviceStatusCode}",
+    "accountDetails": [
+      {
+        "customerId": "${RESPONSE~accounts[].customerId}",
+        "accountNo~LIT_CLS_LN_DLBL1~رقم حساب": "${RESPONSE~accounts[].accountNo}",
+        "loanType~LIT_CLS_LN_DLBL2~نوع القرض": "${RESPONSE~accounts[].loanType}",
+        "currency~LIT_CLS_LN_DLBL3~عملة": "${RESPONSE~accounts[].currency}",
+        "loanAmount~LIT_CLS_LN_DLBL4~مبلغ القرض": "${RESPONSE~accounts[].loanAmount}",
+        "preclosureCharges~LIT_CLS_LN_DLBL5~رسوم ما قبل الإغلاق": "${RESPONSE~accounts[].preclosureCharges}",
+        "interestAmount~LIT_CLS_LN_DLBL6~مبلغ الفائدة": "${RESPONSE~accounts[].interestAmount}",
+        "closureType~LIT_CLS_LN_DLBL7~نوع الاغلاق": "${RESPONSE~accounts[].closureType}",
+        "closureDate~LIT_CLS_LN_DLBL8~تاريخ الإغلاق": "${RESPONSE~accounts[].closureDate}"
+      }
+    ]
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

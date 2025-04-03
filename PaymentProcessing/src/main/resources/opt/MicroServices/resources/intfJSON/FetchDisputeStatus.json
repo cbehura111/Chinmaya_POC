@@ -1,0 +1,37 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "complaintId": "${REQUEST~apiRequest.requestObj.complaintId}",
+    "requestType": "${REQUEST~apiRequest.requestObj.requestType}"
+  },
+  "responseDef": {
+    "serviceStatusCode": "${RESPONSE~statusCode}",
+    "hostErrorMsg": "${RESPONSE~statusMessage}",
+    "hostErrorCode": "${RESPONSE~errorCode}",
+    "tid": "${RESPONSE~data.tid}",
+    "status": "${RESPONSE~data.status}",
+    "statusRemark": "${RESPONSE~data.statusRemark}",
+    "closureTat": "${RESPONSE~data.closureTat}",
+    "nextActionTat": "${RESPONSE~data.nextActionTat}",
+    "benAccNo": "${RESPONSE~data.benAccNo}",
+    "benIfscCode": "${RESPONSE~data.benIfscCode}",
+    "claimId": "${RESPONSE~data.claimId}",
+    "transAmount": "${RESPONSE~data.transAmount}",
+    "disputeAmount": "${RESPONSE~data.disputeAmount}",
+    "transDate": "${RESPONSE~data.transDate}",
+    "rrn": "${RESPONSE~data.rrn}"
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout": "10"
+}

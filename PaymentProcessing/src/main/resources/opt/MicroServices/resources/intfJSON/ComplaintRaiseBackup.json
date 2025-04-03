@@ -1,0 +1,42 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "GID": "${REQUEST~apiRequest.requestObj.GID}",
+    "BRANCH_NO": "${REQUEST~apiRequest.requestObj.BRANCH_NO}",
+    "CUSTOMER_NO": "${REQUEST~apiRequest.requestObj.CUSTOMER_NO}",
+    "CUST_NAME": "${REQUEST~apiRequest.requestObj.CUST_NAME}",
+    "PHNO": "${REQUEST~apiRequest.requestObj.PHNO}",
+    "EMAIL": "${REQUEST~apiRequest.requestObj.EMAIL}",
+    "GTYPE": "${REQUEST~apiRequest.requestObj.GTYPE}",
+    "GCATEGORY": "${REQUEST~apiRequest.requestObj.GCATEGORY}",
+    "GCATEGORY1": "${REQUEST~apiRequest.requestObj.GCATEGORY1}",
+    "GCATEGORY2": "${REQUEST~apiRequest.requestObj.GCATEGORY2}",
+    "GCATEGORY3": "${REQUEST~apiRequest.requestObj.GCATEGORY3}",
+    "TRNID_UTR": "${REQUEST~apiRequest.requestObj.TRNID_UTR}",
+    "TRN_AMOUNT": "${REQUEST~apiRequest.requestObj.TRN_AMOUNT}",
+    "TRN_DATE": "${REQUEST~apiRequest.requestObj.TRN_DATE}",
+    "DBCARD_NO": "${REQUEST~apiRequest.requestObj.DBCARD_NO}",
+    "GDETAILS": "${REQUEST~apiRequest.requestObj.GDETAILS}",
+    "FILE_PATH": "${REQUEST~apiRequest.requestObj.FILE_PATH}",
+    "LOGIN_IP": "${REQUEST~apiRequest.requestObj.LOGIN_IP}",
+    "ZOCode": "${REQUEST~apiRequest.requestObj.ZOCode}",
+    "ZOMail": "${REQUEST~apiRequest.requestObj.ZOMail}",
+    "HO_Dept_Code": "${REQUEST~apiRequest.requestObj.HO_Dept_Code}",
+    "CHANNEL_ID": "${REQUEST~apiRequest.requestObj.CHANNEL_ID}",
+    "CHANNEL_TOKEN": "${REQUEST~apiRequest.requestObj.CHANNEL_TOKEN}"
+},
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

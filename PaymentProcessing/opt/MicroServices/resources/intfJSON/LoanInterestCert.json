@@ -1,0 +1,28 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": { 
+
+      "data":
+      {
+      "requestType":"${REQUEST~apiRequest.requestObj.data.requestType}",
+      "selectLoanAccount":"${REQUEST~apiRequest.requestObj.data.selectLoanAccount}",
+      "interestCertificateYear":"${REQUEST~apiRequest.requestObj.data.interestCertificateYear}"
+      }, 
+    "vendor":"${REQUEST~apiRequest.requestObj.vendor}", 
+    "client":"${REQUEST~apiRequest.requestObj.client}"
+    },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

@@ -1,0 +1,30 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "apiRequest": {
+      "requestObj": {
+        "appId": "${REQUEST~apiRequest.requestObj.appId}",
+        "notifPayload": "${REQUEST~apiRequest.requestObj.notifPayload}",
+        "status": "${REQUEST~apiRequest.requestObj.status}",
+        "sourceSystem": "${REQUEST~apiRequest.requestObj.sourceSystem}",
+        "channel": "${REQUEST~apiRequest.requestObj.channel}",
+        "optdNotifTypes": "${REQUEST~apiRequest.requestObj.optdNotifTypes}",
+        "txnStatus": "${REQUEST~apiRequest.requestObj.txnStatus}"
+      }
+    }
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

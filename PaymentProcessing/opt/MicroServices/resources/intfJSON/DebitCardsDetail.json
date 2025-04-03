@@ -1,0 +1,22 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "cardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+    "channelId": "${REQUEST~apiRequest.requestObj.channelId}",
+    "institutionId": "${REQUEST~apiRequest.requestObj.institutionId}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

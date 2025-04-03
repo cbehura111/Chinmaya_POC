@@ -1,0 +1,39 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "depositAmount": "${REQUEST~apiRequest.requestObj.depositAmount}",
+    "depAccountType": "${REQUEST~apiRequest.requestObj.depAccountType}",
+    "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+    "debitAcctCcy": "${REQUEST~apiRequest.requestObj.debitAcctCcy}",
+    "depProductType": "${REQUEST~apiRequest.requestObj.depProductType}",
+    "depositInterestRate": "${REQUEST~apiRequest.requestObj.depositInterestRate}",
+    "maturityInstruction": "${REQUEST~apiRequest.requestObj.maturityInstruction}",
+    "maturityDate": "${REQUEST~apiRequest.requestObj.maturityDate}",
+    "depositTenureInMonths": "${REQUEST~apiRequest.requestObj.depositTenureInMonths}",
+    "depositDate": "${REQUEST~apiRequest.requestObj.depositDate}",
+    "nomineeName": "${REQUEST~apiRequest.requestObj.nomineeName}",
+    "nomineeAddress": "${REQUEST~apiRequest.requestObj.nomineeAddress}",
+    "payoutAccount": "${REQUEST~apiRequest.requestObj.payoutAccount}",
+    "autoDebit": "${REQUEST~apiRequest.requestObj.autoDebit}",
+    "autoDebitAccNo": "${REQUEST~apiRequest.requestObj.autoDebitAccNo}",
+    "autoDebitDate": "${REQUEST~apiRequest.requestObj.autoDebitDate}",
+    "branchCode": "${REQUEST~apiRequest.requestObj.branchCode}",
+    "branchName": "${REQUEST~apiRequest.requestObj.branchName}",
+    "accountHolderName": "${REQUEST~apiRequest.requestObj.accountHolderName}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

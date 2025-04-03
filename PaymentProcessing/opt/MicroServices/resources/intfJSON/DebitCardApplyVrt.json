@@ -1,0 +1,48 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "GET",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": { 
+    "instCode":"${REQUEST~apiRequest.requestObj.instCode}", 
+      "virtualCardReq":
+      {
+      "reqId":"${REQUEST~apiRequest.requestObj.virtualCardReq.reqId}",
+      "custCode":"${REQUEST~apiRequest.requestObj.virtualCardReq.custCode}",
+      "homeAddr1":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeAddr1}",
+      "homeAddr2":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeAddr2}",
+      "homeAddr3":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeAddr3}",
+      "homeCity":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeCity}",
+      "homeCounty":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeCounty}",
+      "homeCountry":"${REQUEST~apiRequest.requestObj.virtualCardReq.homeCountry}",
+      "homeTel": "${REQUEST~apiRequest.requestObj.virtualCardReq.homeTel}",
+      "homePostalCode": "${REQUEST~apiRequest.requestObj.virtualCardReq.homePostalCode}",
+      "actionCode": "${REQUEST~apiRequest.requestObj.virtualCardReq.actionCode}",
+      "branchCode": "${REQUEST~apiRequest.requestObj.virtualCardReq.branchCode}",
+      "cardProduct": "${REQUEST~apiRequest.requestObj.virtualCardReq.cardProduct}",
+      "firstName": "${REQUEST~apiRequest.requestObj.virtualCardReq.firstName}",
+      "lastName": "${REQUEST~apiRequest.requestObj.virtualCardReq.lastName}",
+      "gender": "${REQUEST~apiRequest.requestObj.virtualCardReq.gender}",
+      "marriedStatus": "${REQUEST~apiRequest.requestObj.virtualCardReq.marriedStatus}",
+      "accountType": "${REQUEST~apiRequest.requestObj.virtualCardReq.accountType}",
+      "accountNo": "${REQUEST~apiRequest.requestObj.virtualCardReq.accountNo}",
+      "pan": "${REQUEST~apiRequest.requestObj.virtualCardReq.pan}"
+      }, 
+    "pFlag":"${REQUEST~apiRequest.requestObj.pFlag}", 
+    "reqMsgId":"${REQUEST~apiRequest.requestObj.reqMsgId}", 
+    "makerId":"${REQUEST~apiRequest.requestObj.makerId}", 
+    "checkerId":"${REQUEST~apiRequest.requestObj.checkerId}", 
+    "approverId":"${REQUEST~apiRequest.requestObj.approverId}"
+    },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

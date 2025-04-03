@@ -1,0 +1,43 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "POST",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+        "Authorization": "",
+        "clientId": "e598911681fe83365fefce9b2fcb7c30",
+        "clientSecret": "15317a8a58095fdc21aa72f13bb41c7cbdcab0f2cdca7cc9025000fc4d2a2471"
+    },
+    "requestDef": {
+        "smEncryptedData": "${REQUEST~apiRequest.requestObj.smEncryptedData}"
+    },
+    "responseDef": {
+        "documentType": "${RESPONSE~data.documentType}",
+        "name": "${RESPONSE~data.name}",
+        "dateOfBirth": "${RESPONSE~data.dateOfBirth}",
+        "gender": "${RESPONSE~data.gender}",
+        "careOf": "${RESPONSE~data.careOf}",
+        "house": "${RESPONSE~data.house}",
+        "street": "${RESPONSE~data.street}",
+        "district": "${RESPONSE~data.district}",
+        "locality": "${RESPONSE~data.locality}",
+        "postOfficeName": "${RESPONSE~data.postOfficeName}",
+        "state": "${RESPONSE~data.state}",
+        "pincode": "${RESPONSE~data.pincode}",
+        "country": "${RESPONSE~data.country}",
+        "vtcName": "${RESPONSE~data.vtcName}",
+        "mobile": "${RESPONSE~data.mobile}",
+        "email": "${RESPONSE~data.email}",
+        "photoBase64": "${RESPONSE~data.photoBase64}",
+        "maskAadhaarNumber": "${RESPONSE~data.maskAadhaarNumber}",
+        "referenceId": "${RESPONSE~referenceId}",
+        "responseMessage": "${RESPONSE~responseMessage}",
+        "responseCode": "${RESPONSE~responseCode}"
+    },
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    }
+}

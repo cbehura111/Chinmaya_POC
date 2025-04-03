@@ -1,0 +1,30 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "appId": "${REQUEST~apiRequest.appId}",
+    "deliverTo": "${REQUEST~apiRequest.requestObj.deliverTo}",
+    "accountNumber": "${REQUEST~apiRequest.requestObj.accountNumber}",
+    "transactionType": "${REQUEST~apiRequest.requestObj.transactionType}",
+    "debitAcctType": "${REQUEST~apiRequest.requestObj.debitAcctType}",
+    "cardType": "${REQUEST~apiRequest.requestObj.cardType}",
+    "cardGrade": "${REQUEST~apiRequest.requestObj.cardGrade}",
+    "cardName": "${REQUEST~apiRequest.requestObj.cardName}",
+    "fromDate": "${REQUEST~apiRequest.requestObj.fromDate}",
+    "toDate": "${REQUEST~apiRequest.requestObj.toDate}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

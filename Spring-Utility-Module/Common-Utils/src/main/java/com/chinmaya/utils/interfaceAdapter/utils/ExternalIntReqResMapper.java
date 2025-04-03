@@ -1,9 +1,9 @@
 package com.chinmaya.utils.interfaceAdapter.utils;
 
 import com.chinmaya.utils.interfaceAdapter.service.RestService;
-import com.chinmaya.cache.utils.BaseDynamicValue;
-import com.chinmaya.cache.utils.CommonUtils;
-import com.chinmaya.cache.utils.CustomDynamicValue;
+import com.chinmaya.utils.utils.BaseDynamicValue;
+import com.chinmaya.utils.utils.CommonUtils;
+import com.chinmaya.utils.utils.CustomDynamicValue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;

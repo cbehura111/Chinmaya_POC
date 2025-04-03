@@ -1,0 +1,27 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "cardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+    "withdrawalLmt": "${REQUEST~apiRequest.requestObj.withdrawalLimit}",
+    "onlineTxnLmt": "${REQUEST~apiRequest.requestObj.onlineTxnLimit}",
+    "cardTxnLmt": "${REQUEST~apiRequest.requestObj.txnMaxLmt}",
+    "startDate": "${REQUEST~apiRequest.requestObj.startDate}",
+    "endDate": "${REQUEST~apiRequest.requestObj.endDate}",
+    "contactlessPayLimit": "${REQUEST~apiRequest.requestObj.contactlessPayLimit}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}

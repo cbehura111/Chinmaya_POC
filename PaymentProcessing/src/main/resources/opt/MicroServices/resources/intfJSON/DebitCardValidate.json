@@ -1,0 +1,26 @@
+{
+    "apiURL": "${URL}",
+    "servicetype": "HTTP",
+    "methodType": "GET",
+    "contentType": "application/json",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+        "Authorization": ""
+    },
+    "requestDef": {
+        "cardNumber": "${REQUEST~apiRequest.requestObj.cardNumber}",
+        "expiryDate": "${REQUEST~apiRequest.requestObj.expiryDate}",
+        "pinblock": "${REQUEST~apiRequest.requestObj.pinblock}",
+        "cvv": "${REQUEST~apiRequest.requestObj.cvv}",
+        "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+        "institutionId": "${REQUEST~apiRequest.requestObj.institutionId}",
+        "channelId": "${REQUEST~apiRequest.requestObj.channelId}"
+    },
+    "responseDef": "",
+    "logging": {
+        "logRequired": "Y",
+        "logType": "BOTH"
+    },
+    "timeout": "10"
+}

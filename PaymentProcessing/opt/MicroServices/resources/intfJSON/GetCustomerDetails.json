@@ -1,0 +1,43 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "vendor": "${CONST~IEXCEEDLSB}",
+    "client": "${CONST~BOM}",
+    "requestId": "${REQUEST~apiRequest.requestObj.requestId}",
+    "data": "${REQUEST~apiRequest.requestObj.data}",
+    "reqTimestamp": "${CUSTOMJAVACODE~generateRequestTimestamp}",
+    "chksum": "${CONST~13456}"
+  },
+  "responseDef": {
+    "customerDetails": {
+      "customerId": "${RESPONSE~customerNumber}",
+      "customerName": "${RESPONSE~customerName}",
+      "mobileNo": "${RESPONSE~mobileNumber}",
+      "panNumber": "${RESPONSE~panNumber}",
+      "aadharNumber": "${RESPONSE~aadharNumber}",
+      "customerNumber": "${RESPONSE~customerNumber}",
+      "accountNumber": "${RESPONSE~accountNumber}",
+      "custType": "${RESPONSE~custType}",
+      "custTypeDesc": "${RESPONSE~custTypeDesc}",
+      "custStatusDesc": "${RESPONSE~custStatusDesc}",
+      "ckycNo": "${RESPONSE~ckycNo}",
+      "emailId": "${RESPONSE~emailId}",
+      "address1": "${RESPONSE~address1}",
+      "address2": "${RESPONSE~address2}",
+      "address3": "${RESPONSE~address3}",
+      "address4": "${RESPONSE~address4}"
+    }
+  },
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  }
+}

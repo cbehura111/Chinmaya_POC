@@ -1,0 +1,26 @@
+{
+  "apiURL": "${URL}",
+  "servicetype": "HTTP",
+  "methodType": "POST",
+  "contentType": "application/json",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "Authorization": ""
+  },
+  "requestDef": {
+    "customerId": "${REQUEST~apiRequest.requestObj.customerId}",
+    "debitAcctNo": "${REQUEST~apiRequest.requestObj.debitAcctNo}",
+    "startDate": "${REQUEST~apiRequest.requestObj.startDate}",
+    "endDate": "${REQUEST~apiRequest.requestObj.endDate}",
+    "offset": "${REQUEST~apiRequest.requestObj.offset}",
+    "limit": "${REQUEST~apiRequest.requestObj.limit}",
+    "txnCount": "${REQUEST~apiRequest.requestObj.txnCount}"
+  },
+  "responseDef": "",
+  "logging": {
+    "logRequired": "Y",
+    "logType": "BOTH"
+  },
+  "timeout":"10"
+}
